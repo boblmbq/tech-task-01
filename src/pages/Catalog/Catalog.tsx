@@ -1,5 +1,5 @@
 function Catalog() {
-	return <div></div>
+	return <div>catalog</div>
 }
 
 export default Catalog

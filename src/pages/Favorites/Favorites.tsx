@@ -1,5 +1,5 @@
-function Catalog() {
-	return <div></div>
+function Favorites() {
+	return <div>favorites</div>
 }
 
-export default Catalog
+export default Favorites

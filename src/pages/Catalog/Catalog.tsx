@@ -1,5 +1,6 @@
 function Catalog() {
-	return <div>catalog</div>
+
+	return <div>catalog</div>;
 }
 
-export default Catalog
+export default Catalog;

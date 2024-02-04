@@ -1,5 +1,5 @@
-import type { AxiosError, AxiosRequestConfig } from 'axios';
 import type { BaseQueryFn } from '@reduxjs/toolkit/query';
+import type { AxiosError, AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 
 const axiosBaseQuery =
@@ -25,6 +25,7 @@ const axiosBaseQuery =
 				params,
 				headers,
 			});
+			console.log(result);
 			return { data: result.data };
 		} catch (axiosError) {
 			const err = axiosError as AxiosError;
@@ -37,4 +38,4 @@ const axiosBaseQuery =
 		}
 	};
 
-	export default axiosBaseQuery
+export default axiosBaseQuery;

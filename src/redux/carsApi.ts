@@ -1,8 +1,7 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import MOCK_API_BASE_URL from '../api/api';
-import axiosBaseQuery from '../axios/axiosBaseQuery';
 import { RENTAL_CARS } from '../api/endpoints';
-
+import axiosBaseQuery from '../axios/axiosBaseQuery';
 
 export const carsApi = createApi({
 	reducerPath: 'carsApi',
@@ -19,8 +18,17 @@ export const carsApi = createApi({
 					},
 				}),
 			}),
+			getAllCars: builder.query({
+				query: params => ({
+					url: `/${RENTAL_CARS}`,
+					method: 'get',
+					params: {
+						...params,
+					},
+				}),
+			}),
 		};
 	},
 });
 
-export const { useGetCarsQuery } = carsApi;
+export const { useGetCarsQuery, useGetAllCarsQuery } = carsApi;

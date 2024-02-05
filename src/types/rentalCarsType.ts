@@ -1,4 +1,4 @@
-export type rentalCarsType = {
+export type RentalCarsType = {
 	id: number;
 	year: number;
 	make: string;

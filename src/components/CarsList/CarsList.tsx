@@ -1,5 +1,5 @@
 import uuid from 'react-uuid';
-import { rentalCarsType } from '../../types';
+import { RentalCarsType } from '../../types';
 import {
 	CarImage,
 	CarImageWrapper,
@@ -11,7 +11,7 @@ import {
 } from './CarsList.styled';
 import DetailedInfoList from './DetailedInfoListWrapper';
 
-function CarsList({ data }: { data: rentalCarsType }) {
+function CarsList({ data }: { data: RentalCarsType }) {
 	return (
 		<CarsListWrapper>
 			{data.map(car => {

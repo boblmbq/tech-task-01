@@ -1,4 +1,4 @@
-export type RentalCarsType = {
+export type RentalCarType = {
 	id: number;
 	year: number;
 	make: string;
@@ -15,4 +15,6 @@ export type RentalCarsType = {
 	address: string;
 	rentalConditions: string;
 	mileage: number;
-}[];
+};
+
+export type RentalCarsType = RentalCarType[];

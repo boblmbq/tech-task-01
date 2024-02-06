@@ -1,4 +1,5 @@
+import { RentalCarType, RentalCarsType } from './RentalCarsType';
 import { fetchingErrorType } from './fetchingErrorType';
-import { RentalCarsType } from './rentalCarsType';
+import { ParamType } from './params';
 
-export type { RentalCarsType, fetchingErrorType };
+export type { ParamType, RentalCarType, RentalCarsType, fetchingErrorType };

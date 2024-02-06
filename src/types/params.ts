@@ -1,1 +1,1 @@
-export type ParamType = { page: number; limit: number };
+export type ParamType = { page?: number; limit?: number };

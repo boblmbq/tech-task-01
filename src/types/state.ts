@@ -1,4 +1,4 @@
-import { RentalCarsType } from './RentalCarsType';
+import { RentalCarsType } from '../types';
 
 export type ReduxStateType = {
 	paginatedCars: null | RentalCarsType;

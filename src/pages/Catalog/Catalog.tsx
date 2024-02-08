@@ -13,13 +13,13 @@ import {
 	selectPaginatedCars,
 } from '../../redux/carSlice/carSelectors';
 import { useAppDispatch } from '../../redux/store/store';
+import { CatalogWrapper } from './Catalog.styled';
 
 function Catalog() {
 	const page = useSelector(selectCurrentPage);
 	const maxPage = useSelector(selectMaxPage);
 	const paginatedCars = useSelector(selectPaginatedCars);
 	const dispatch = useAppDispatch();
-
 
 	useEffect(() => {
 		dispatch(fetchAllCars());
@@ -31,10 +31,14 @@ function Catalog() {
 
 	return (
 		paginatedCars && (
-			<>
+			<CatalogWrapper>
 				<CarsList data={paginatedCars} />
-				{page !== maxPage && <LoadMoreBtn />}
-			</>
+				{page !== maxPage && (
+					<div>
+						<LoadMoreBtn />
+					</div>
+				)}
+			</CatalogWrapper>
 		)
 	);
 }

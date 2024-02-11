@@ -1,9 +1,11 @@
 import { LIMIT } from '../../api/params';
-import { ReduxStateType } from '../../types/state';
+import { InitialStateType } from './carSlice';
 
-export const selectPaginatedCars = (state: ReduxStateType) =>
+export const selectPaginatedCars = (state: InitialStateType) =>
 	state.paginatedCars;
-export const selectAllCars = (state: ReduxStateType) => state.allCars;
-export const selectMaxPage = (state: ReduxStateType) =>
+export const selectAllCars = (state: InitialStateType) => state.allCars;
+export const selectMaxPage = (state: InitialStateType) =>
 	Math.ceil(state.allCars.length / LIMIT);
-export const selectCurrentPage = (state: ReduxStateType) => state.currentPage;
+export const selectCurrentPage = (state: InitialStateType) => state.currentPage;
+export const selectIsModalOpen = (state: InitialStateType) => state.isModalOpen;
+export const selectCarForModal = (state: InitialStateType) => state.carForModal;

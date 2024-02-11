@@ -9,7 +9,6 @@ const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
 
-console.log('index.tsx');
 
 root.render(
 		<Provider store={store}>

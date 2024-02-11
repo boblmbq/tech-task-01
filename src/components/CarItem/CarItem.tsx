@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { RentalCarType } from '../../types';
+import CarModal from '../CarModal/CarModal';
 import { DetailedInfoListsWrapper } from '../CarsList/CarsList.styled';
-import DetailedInfoList from '../CarsList/DetailedInfoListWrapper';
+import DetailedInfoList from '../DetailedinfoListWrapper/DetailedInfoListWrapper';
+import { Modal } from '../Modal/Modal';
 import {
 	CarImage,
 	CarImageWrapper,
 	CarInfoWrapper,
 	CarNamePriceWrapper,
+	CarNameYearText,
 	LearnMoreBtn,
 } from './CarItem.styled';
-import { Modal } from '../Modal/Modal';
 
 function CarItem(car: RentalCarType) {
 	const {
@@ -30,7 +32,6 @@ function CarItem(car: RentalCarType) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleLearnMoreClick = () => {
-		// dispatch(toggleModal(car));
 		setIsOpen(prev => !prev);
 	};
 
@@ -42,9 +43,9 @@ function CarItem(car: RentalCarType) {
 				</CarImageWrapper>
 
 				<CarNamePriceWrapper>
-					<p>
+					<CarNameYearText>
 						{make} <span>{model}</span>, {year}
-					</p>
+					</CarNameYearText>
 					<p>{rentalPrice}</p>
 				</CarNamePriceWrapper>
 
@@ -57,7 +58,10 @@ function CarItem(car: RentalCarType) {
 					Learn more
 				</LearnMoreBtn>
 			</CarInfoWrapper>
-			<Modal isOpen={isOpen} car={car} />
+
+			<Modal isOpen={isOpen}>
+				<CarModal carInfo={car} handleLearnMoreClick={handleLearnMoreClick} />
+			</Modal>
 		</>
 	);
 }

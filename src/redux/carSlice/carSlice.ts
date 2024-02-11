@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RentalCarType, RentalCarsType } from '../../types';
+import {  RentalCarsType } from '../../types';
 import { fetchAllCars, fetchPaginatedCars } from './carOperations';
 
 export type InitialStateType = {
@@ -7,8 +7,7 @@ export type InitialStateType = {
 	allCars: RentalCarsType;
 	favorites: RentalCarsType;
 	currentPage: number;
-	isModalOpen: boolean;
-	carForModal: RentalCarType | null;
+
 };
 
 const initialState: InitialStateType = {
@@ -16,8 +15,7 @@ const initialState: InitialStateType = {
 	allCars: [],
 	favorites: [],
 	currentPage: 1,
-	isModalOpen: false,
-	carForModal: null,
+
 };
 
 export const carSlice = createSlice({
@@ -26,10 +24,6 @@ export const carSlice = createSlice({
 	reducers: {
 		incrementPage(state) {
 			state.currentPage += 1;
-		},
-		toggleModal(state, { payload }: { payload: RentalCarType | null }) {
-			state.isModalOpen = !state.isModalOpen;
-			state.carForModal = payload;
 		},
 	},
 	extraReducers: builder => {
@@ -42,5 +36,5 @@ export const carSlice = createSlice({
 			});
 	},
 });
-export const { incrementPage, toggleModal } = carSlice.actions;
+export const { incrementPage } = carSlice.actions;
 export const carReducer = carSlice.reducer;

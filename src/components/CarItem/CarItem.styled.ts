@@ -15,7 +15,6 @@ export const CarImageWrapper = styled.div`
 export const CarImage = styled.img`
 	width: 100%;
 	height: 100%;
-
 	object-fit: cover;
 `;
 
@@ -28,17 +27,16 @@ export const CarNamePriceWrapper = styled.div`
 	font-size: 16px;
 	line-height: 1.5;
 	color: #121417;
+`;
 
-	& p {
-		font-family: var(--font-family);
-	}
+export const CarNameYearText = styled.div`
+	font-family: var(--font-family);
 
 	& span {
 		font-family: var(--second-family);
 		color: #3470ff;
 	}
 `;
-
 
 export const LearnMoreBtn = styled.button`
 	border-radius: 12px;

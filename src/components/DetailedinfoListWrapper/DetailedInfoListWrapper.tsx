@@ -2,19 +2,17 @@ import uuid from 'react-uuid';
 import {
 	DetailedInfoListWrapper,
 	DetailedInfoTextWrapper,
-} from './CarsList.styled';
+} from '../CarsList/CarsList.styled';
 
 function DetailedInfoList({
-	information,
+	information
 }: {
 	information: (string | number)[];
 }) {
 	return (
 		<DetailedInfoListWrapper>
 			{information.map(info => (
-				<DetailedInfoTextWrapper key={uuid()}>
-					{info}
-				</DetailedInfoTextWrapper>
+				<DetailedInfoTextWrapper key={uuid()}>{info}</DetailedInfoTextWrapper>
 			))}
 		</DetailedInfoListWrapper>
 	);

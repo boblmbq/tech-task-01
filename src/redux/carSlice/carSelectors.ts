@@ -7,5 +7,3 @@ export const selectAllCars = (state: InitialStateType) => state.allCars;
 export const selectMaxPage = (state: InitialStateType) =>
 	Math.ceil(state.allCars.length / LIMIT);
 export const selectCurrentPage = (state: InitialStateType) => state.currentPage;
-export const selectIsModalOpen = (state: InitialStateType) => state.isModalOpen;
-export const selectCarForModal = (state: InitialStateType) => state.carForModal;

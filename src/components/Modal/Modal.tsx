@@ -1,22 +1,21 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { RentalCarType } from '../../types';
 import { ModalWrapper } from './Modal.styled';
 
-export function Modal({
-	isOpen,
-	car,
-}: {
+type ModalProps = {
 	isOpen: boolean;
-	car: RentalCarType | null;
-}) {
-	const modalcontainer = document.getElementById('portal');
+	children: React.ReactElement;
+};
 
-	if (!modalcontainer) {
+export function Modal({ isOpen, children }: ModalProps) {
+	const modalContainer = document.getElementById('portal');
+
+	if (!modalContainer || !isOpen) {
 		return null;
 	}
 
 	return ReactDOM.createPortal(
-		<>{isOpen && <ModalWrapper>{car?.rentalPrice}</ModalWrapper>}</>,
-		modalcontainer
+		<ModalWrapper>{children}</ModalWrapper>,
+		modalContainer
 	);
 }

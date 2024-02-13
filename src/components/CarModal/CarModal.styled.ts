@@ -2,19 +2,21 @@ import styled from 'styled-components';
 export { CarImage } from '../CarItem/CarItem.styled';
 
 export const CarModalWrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 14px;
-	width: 540px;
-	min-height: 750px;
-	padding: 40px;
-	border-radius: 24px;
-	background: #fff;
-
 	position: relative;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+
+	width: 540px;
+	height: 750px;
+	padding: 40px;
+	b
+	border-radius: 24px;
+	background: #fff;
 `;
 
 export const CarModalInnerWrapper = styled.div`

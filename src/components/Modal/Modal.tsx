@@ -24,9 +24,11 @@ export function Modal({ handleClose, children }: ModalProps) {
 
 	useEffect(() => {
 		window.addEventListener('keydown', handleEscapeClick);
+		document.body.style.overflow = 'hidden';
 
 		return () => {
 			window.removeEventListener('keydown', handleEscapeClick);
+			document.body.style.overflow = 'auto';
 		};
 	});
 

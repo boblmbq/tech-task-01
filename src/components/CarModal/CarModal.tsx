@@ -1,19 +1,23 @@
+import ButtonClose from '../../icons/ButtonClose/ButtonClose';
 import { RentalCarType } from '../../types';
-import DetailedInfoList from '../DetailedinfoListWrapper/DetailedInfoListWrapper';
+import Extras from './AccessoriesFunctionalities/AccessoriesFunctionalities';
 import {
 	CarImage,
-	CarImageModalWrapper,
 	CarModalCloseButton,
+	CarModalImageWrapper,
+	CarModalInnerWrapper,
 	CarModalWrapper,
-	CarNameYearText,
+	RentalCarModalButton,
 } from './CarModal.styled';
+import MainCarDetails from './MainCarDetails/MainCarDetails';
+import RentalConditions from './RentalConditions/RentalConditions';
 
 type CarModalProps = {
 	carInfo: RentalCarType;
-	handleLearnMoreClick: () => void;
+	handleToggleModalClick: () => void;
 };
 
-function CarModal({ carInfo, handleLearnMoreClick }: CarModalProps) {
+function CarModal({ carInfo, handleToggleModalClick }: CarModalProps) {
 	const {
 		id,
 		img,
@@ -26,77 +30,53 @@ function CarModal({ carInfo, handleLearnMoreClick }: CarModalProps) {
 		engineSize,
 		accessories,
 		functionalities,
+		description,
+		rentalConditions,
+		rentalPrice,
+		mileage,
 	} = carInfo;
 	const previewAddress = address.split(',').splice(1, 2);
-	const placeTypeInfo = [
+	const mainCarInfo = [
 		...previewAddress,
 		`Id: ${id}`,
 		`Year: ${year}`,
 		`Type: ${type}`,
-	];
-	const detailInfo = [
 		`Fuel Consumption: ${fuelConsumption}`,
 		`Engine Size: ${engineSize}`,
 	];
+	const functionalitiesAccessories = [...functionalities, ...accessories];
 
 	return (
 		<CarModalWrapper>
-			<CarModalCloseButton onClick={() => handleLearnMoreClick()}>
-				close
+			<CarModalCloseButton onClick={() => handleToggleModalClick()}>
+				<ButtonClose />
 			</CarModalCloseButton>
 
-			<CarImageModalWrapper>
+			<CarModalImageWrapper>
 				<CarImage src={img} alt='' />
-			</CarImageModalWrapper>
+			</CarModalImageWrapper>
 
-			<CarNameYearText>
-				{make} <span>{model}</span>, {year}
-			</CarNameYearText>
+			<CarModalInnerWrapper>
+				<MainCarDetails
+					make={make}
+					year={year}
+					model={model}
+					mainCarInfo={mainCarInfo}
+					description={description}
+				/>
 
-			<DetailedInfoList information={placeTypeInfo} />
-			<DetailedInfoList information={detailInfo} />
+				<Extras extrasInfo={functionalitiesAccessories} />
 
-			<p></p>
-			<DetailedInfoList information={accessories} />
-			<DetailedInfoList information={functionalities} />
+				<RentalConditions
+					conditions={rentalConditions}
+					mileage={mileage}
+					rentalPrice={rentalPrice}
+				/>
 
-			<p></p>
-			<ul></ul>
-
-			<button>Rental car</button>
+				<RentalCarModalButton>Rental car</RentalCarModalButton>
+			</CarModalInnerWrapper>
 		</CarModalWrapper>
 	);
 }
 
 export default CarModal;
-
-// {
-//     "id": 9582,
-//     "year": 2008,
-//     "make": "Buick",
-//     "model": "Enclave",
-//     "type": "SUV",
-
-//     "img": "https://ftp.goit.study/img/cars-test-task/buick_enclave.jpeg",
-
-//     "description": "The Buick Enclave is a stylish and spacious SUV known 		for its comfortable ride and luxurious features.",
-
-//     "fuelConsumption": "10.5",
-//     "engineSize": "3.6L V6",
-//     "accessories": [
-//       "Leather seats",
-//       "Panoramic sunroof",
-//       "Premium audio system"
-//     ],
-//     "functionalities": [
-//       "Power liftgate",
-//       "Remote start",
-//       "Blind-spot monitoring"
-//     ],
-//     "rentalPrice": "$40",
-//     "rentalCompany": "Luxury Car Rentals",
-//     "address": "123 Example Street, Kiev, Ukraine",
-//     "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit required",
-
-//     "mileage": 5858
-//   }

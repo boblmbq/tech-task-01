@@ -5,7 +5,7 @@ import {
 } from '../CarsList/CarsList.styled';
 
 function DetailedInfoList({
-	information
+	information,
 }: {
 	information: (string | number)[];
 }) {

@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const CarInfoWrapper = styled.li`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 274px;
 `;
 
 export const CarImageWrapper = styled.div`
+	position: relative;
 	margin-bottom: 14px;
 	width: 274px;
 	height: 268px;
@@ -16,6 +20,15 @@ export const CarImage = styled.img`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+`;
+
+export const FavoriteButton = styled.button`
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	border: none;
+	background: transparent;
+	cursor: pointer;
 `;
 
 export const CarNamePriceWrapper = styled.div`
@@ -31,11 +44,11 @@ export const CarNamePriceWrapper = styled.div`
 
 export const CarNameYearText = styled.div`
 	font-family: var(--font-family);
+`;
 
-	& span {
-		font-family: var(--second-family);
-		color: #3470ff;
-	}
+export const HighlightedText = styled.span`
+	font-family: var(--second-family);
+	color: #3470ff;
 `;
 
 export const LearnMoreBtn = styled.button`

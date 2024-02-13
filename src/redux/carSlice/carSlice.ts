@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {  RentalCarsType } from '../../types';
+import { RentalCarsType, RentalCarType } from '../../types';
 import { fetchAllCars, fetchPaginatedCars } from './carOperations';
 
 export type InitialStateType = {
@@ -7,7 +7,6 @@ export type InitialStateType = {
 	allCars: RentalCarsType;
 	favorites: RentalCarsType;
 	currentPage: number;
-
 };
 
 const initialState: InitialStateType = {
@@ -15,7 +14,6 @@ const initialState: InitialStateType = {
 	allCars: [],
 	favorites: [],
 	currentPage: 1,
-
 };
 
 export const carSlice = createSlice({
@@ -24,6 +22,12 @@ export const carSlice = createSlice({
 	reducers: {
 		incrementPage(state) {
 			state.currentPage += 1;
+		},
+		addToFavorites(
+			state,
+			{ payload }: { payload: { carItem: RentalCarType } }
+		) {
+			state.favorites.push(payload.carItem);
 		},
 	},
 	extraReducers: builder => {
@@ -36,5 +40,5 @@ export const carSlice = createSlice({
 			});
 	},
 });
-export const { incrementPage } = carSlice.actions;
+export const { incrementPage, addToFavorites } = carSlice.actions;
 export const carReducer = carSlice.reducer;

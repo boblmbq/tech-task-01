@@ -1,0 +1,1 @@
+export type KeyboardEventType = React.KeyboardEvent;

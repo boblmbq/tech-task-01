@@ -16,26 +16,24 @@ export const DetailedInfoListsWrapper = styled.div`
 
 export const DetailedInfoListWrapper = styled.ul`
 	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 6px;
 `;
 
 export const DetailedInfoTextWrapper = styled.li`
 	font-size: 12px;
 	text-transform: capitalize;
-	line-height: 150%;
+	line-height: 1.5;
 	color: rgba(18, 20, 23, 0.5);
 	white-space: nowrap;
-	padding: 0 6px;
+	padding-right: 6px;
+	
 
-	&:not(:first-child) {
-		border-left: 1px solid rgba(18, 20, 23, 0.1);
+	&:not(:last-child) {
+		border-right: 1px solid rgba(18, 20, 23, 0.1);
 	}
 
-	&:last-child {
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
-	&:first-child {
+	&:first-child, &:last-child{
 		padding-left: 0;
 	}
 `;

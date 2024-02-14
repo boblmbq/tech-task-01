@@ -1,37 +1,19 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { LIMIT } from '../../api/params';
 import CarsList from '../../components/CarsList/CarsList';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
-import {
-	fetchAllCars,
-	fetchPaginatedCars,
-} from '../../redux/carSlice/carOperations';
-import {
-	selectCurrentPage,
-	selectMaxPage,
-	selectPaginatedCars,
-} from '../../redux/carSlice/carSelectors';
-import { useAppDispatch } from '../../redux/store/store';
+import useFetchAllCars from '../../hooks/useFetchAllCars';
+import useFetchCars from '../../hooks/useFetchCars';
+import { selectCurrentPage } from '../../redux/carSlice/carSelectors';
 
 function Catalog() {
-	const dispatch = useAppDispatch();
+	const { cars, loading, error } = useFetchCars();
+	const { allCars, maxPage, error: allCarsError } = useFetchAllCars();
 	const page = useSelector(selectCurrentPage);
-	const maxPage = useSelector(selectMaxPage);
-	const paginatedCars = useSelector(selectPaginatedCars);
-
-	useEffect(() => {
-		dispatch(fetchAllCars());
-	}, [dispatch]);
-
-	useEffect(() => {
-		dispatch(fetchPaginatedCars({ page, limit: LIMIT }));
-	}, [page, dispatch]);
 
 	return (
-		paginatedCars && (
+		cars && (
 			<>
-				<CarsList data={paginatedCars} />
+				<CarsList data={cars} />
 				{page !== maxPage && (
 					<div>
 						<LoadMoreBtn />

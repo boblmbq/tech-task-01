@@ -10,10 +10,10 @@ export type InitialStateType = {
 };
 
 const initialState: InitialStateType = {
-	paginatedCars: [],
-	allCars: [],
+	paginatedCars: [], // not needed
+	allCars: [], // not needed
 	favorites: [],
-	currentPage: 1,
+	currentPage: 1, // not needed
 };
 
 export const carSlice = createSlice({

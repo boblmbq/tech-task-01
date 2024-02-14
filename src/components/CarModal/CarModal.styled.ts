@@ -14,7 +14,6 @@ export const CarModalWrapper = styled.div`
 	width: 540px;
 	height: 750px;
 	padding: 40px;
-	b
 	border-radius: 24px;
 	background: #fff;
 `;

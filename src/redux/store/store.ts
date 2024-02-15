@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import { carReducer } from '../carSlice/carSlice';
+import { rootReducer } from './rootReducer';
 
 export const store = configureStore({
-	reducer: carReducer,
+	reducer: rootReducer,
 });
 
-export const useAppDispatch = () => useDispatch<typeof store.dispatch>();
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

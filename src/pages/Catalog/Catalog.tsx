@@ -1,25 +1,24 @@
-import { useSelector } from 'react-redux';
+import { LIMIT } from '../../api/params';
 import CarsList from '../../components/CarsList/CarsList';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
-import useFetchAllCars from '../../hooks/useFetchAllCars';
 import useFetchCars from '../../hooks/useFetchCars';
-import { selectCurrentPage } from '../../redux/carSlice/carSelectors';
+import { CatalogWrapper } from './Catalog.styled';
 
 function Catalog() {
-	const { cars, loading, error } = useFetchCars();
-	const { allCars, maxPage, error: allCarsError } = useFetchAllCars();
-	const page = useSelector(selectCurrentPage);
+	const { cars, page, handleIncrementPage, loading, error } = useFetchCars();
+
+	const showLoadMoreBtn = cars.length / LIMIT >= page;
 
 	return (
 		cars && (
-			<>
+			<CatalogWrapper>
 				<CarsList data={cars} />
-				{page !== maxPage && (
+				{showLoadMoreBtn && (
 					<div>
-						<LoadMoreBtn />
+						<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
 					</div>
 				)}
-			</>
+			</CatalogWrapper>
 		)
 	);
 }

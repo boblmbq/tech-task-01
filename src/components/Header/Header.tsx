@@ -1,21 +1,24 @@
 import { Link } from 'react-router-dom';
+import Container from '../Container';
 
 function Header() {
 	return (
 		<header>
-			<nav>
-				<ul>
-					<li>
-						<Link to='home'>home</Link>
-					</li>
-					<li>
-						<Link to='catalog'>catalog</Link>
-					</li>
-					<li>
-						<Link to='favorites'>favorites</Link>
-					</li>
-				</ul>
-			</nav>
+			<Container>
+				<nav>
+					<ul>
+						<li>
+							<Link to='home'>home</Link>
+						</li>
+						<li>
+							<Link to='catalog'>catalog</Link>
+						</li>
+						<li>
+							<Link to='favorites'>favorites</Link>
+						</li>
+					</ul>
+				</nav>
+			</Container>
 		</header>
 	);
 }

@@ -15,12 +15,14 @@ export const fetchAllCars = createAsyncThunk(
 
 export const fetchPaginatedCars = createAsyncThunk(
 	'fetchPaginatedCars',
-	async (params: ParamType, thunkApi) => {
+	async (params: ParamType) => {
 		try {
 			const { data } = await MOCK_API_BASE_URL.get(`${RENTAL_CARS}`, {
 				params,
 			});
 			return data;
-		} catch (error) {}
+		} catch (error: any) {
+			// return thunkApi?.rejectWithValue(error.message);
+		}
 	}
 );

@@ -3,16 +3,15 @@ import { RentalCarsType } from '../../types';
 import CarItem from '../CarItem/CarItem';
 import { CarsListWrapper } from './CarsList.styled';
 
-function CarsList({ data }: { data: RentalCarsType }) {
-	
+type CarListType = { data: RentalCarsType };
+
+function CarsList({ data }: CarListType) {
 	return (
-		<>
-			<CarsListWrapper>
-				{data.map(car => (
-					<CarItem key={uuid()} {...car} />
-				))}
-			</CarsListWrapper>
-		</>
+		<CarsListWrapper>
+			{data.map(car => (
+				<CarItem key={uuid()} {...car} />
+			))}
+		</CarsListWrapper>
 	);
 }
 

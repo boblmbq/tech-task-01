@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import ButtonHeart from '../../icons/ButtonHeart/ButtonHeart';
-import { selectFavorites } from '../../redux/carSlice/carSelectors';
-import { addToFavorites } from '../../redux/carSlice/carSlice';
-import { useAppDispatch } from '../../redux/store/store';
+import { addToFavorites } from '../../redux/Favorites/favoritesSlice';
+
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
+import { selectFavorites } from '../../redux/Favorites/favoritesSelectors';
 import { RentalCarType } from '../../types';
 import CarModal from '../CarModal/CarModal';
 import { DetailedInfoListsWrapper } from '../CarsList/CarsList.styled';
@@ -43,15 +43,17 @@ function CarItem(car: RentalCarType) {
 		accessories[0],
 	];
 	const [isOpen, setIsOpen] = useState(false);
-	const favorites = useSelector(selectFavorites);
 	const dispatch = useAppDispatch();
+	const favoriteCars = useAppSelector(selectFavorites);
+
+	const isFavorite = favoriteCars.some(favoriteCar => favoriteCar.id === id);
 
 	const handleToggleModalClick = () => {
 		setIsOpen(prev => !prev);
 	};
 
 	const handleAddToFavorites = () => {
-		dispatch(addToFavorites({carItem: car}));
+		dispatch(addToFavorites({ carItem: car }));
 	};
 
 	return (
@@ -60,7 +62,7 @@ function CarItem(car: RentalCarType) {
 				<div>
 					<CarImageWrapper>
 						<FavoriteButton onClick={() => handleAddToFavorites()}>
-							<ButtonHeart />
+							<ButtonHeart isFavorite={isFavorite} />
 						</FavoriteButton>
 						<CarImage src={img} alt={`a car of ${model} model`} />
 					</CarImageWrapper>

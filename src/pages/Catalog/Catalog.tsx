@@ -1,4 +1,5 @@
 import { LIMIT } from '../../api/params';
+import CarFilter from '../../components/CarFilter/CarFilter';
 import CarsList from '../../components/CarsList/CarsList';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
 import useFetchCars from '../../hooks/useFetchCars';
@@ -12,11 +13,10 @@ function Catalog() {
 	return (
 		cars && (
 			<CatalogWrapper>
+				<CarFilter />
 				<CarsList data={cars} />
 				{showLoadMoreBtn && (
-					<div>
-						<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
-					</div>
+					<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
 				)}
 			</CatalogWrapper>
 		)

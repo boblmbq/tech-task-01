@@ -1,10 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RentalCarsType } from '../../types';
-import { fetchAllCars, fetchPaginatedCars } from './carOperations';
+import {
+	fetchAllCars,
+	fetchBrandAndPriceVariety,
+	fetchPaginatedCars,
+} from './carOperations';
 
 export interface InitialStateType {
-	paginatedCars: RentalCarsType | never;
-	allCars: RentalCarsType;
+	cars: RentalCarsType | never;
+	brandVariety: string[] | undefined;
+	priceVariety: string[] | undefined;
 	loading: boolean;
 	error: null | string;
 }
@@ -18,8 +23,9 @@ const handleRejected = (state: InitialStateType) => {
 };
 
 const initialState: InitialStateType = {
-	paginatedCars: [],
-	allCars: [],
+	cars: [],
+	brandVariety: [],
+	priceVariety: [],
 	loading: false,
 	error: null,
 };
@@ -31,7 +37,7 @@ export const carSlice = createSlice({
 	initialState,
 	reducers: {
 		clearPaginatedCars(state) {
-			state.paginatedCars = [];
+			state.cars = [];
 		},
 	},
 	extraReducers: builder => {
@@ -39,15 +45,19 @@ export const carSlice = createSlice({
 			.addCase(
 				fetchAllCars.fulfilled,
 				(state, action: PayloadAction<RentalCarsType>) => {
-					state.allCars = action.payload;
+					state.cars = action.payload;
 				}
 			)
 			.addCase(
 				fetchPaginatedCars.fulfilled,
 				(state, action: PayloadAction<RentalCarsType>) => {
-					state.paginatedCars.push(...action.payload);
+					state.cars.push(...action.payload);
 				}
 			)
+			.addCase(fetchBrandAndPriceVariety.fulfilled, (state, action) => {
+				state.brandVariety = action.payload?.brands;
+				state.priceVariety = action.payload?.prices;
+			})
 			.addMatcher(action => action.type.endsWith('/pending'), handlePending)
 			.addMatcher(action => action.type.endsWith('/rejected'), handleRejected);
 	},

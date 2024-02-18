@@ -1,8 +1,8 @@
 import { RentalCarsType } from '../types';
 
-export type ReduxStateType = {
+export interface ReduxStateType {
 	paginatedCars: null | RentalCarsType;
 	allCars: [] | RentalCarsType;
 	favorites: [] | RentalCarsType;
 	currentPage: number;
-};
+}

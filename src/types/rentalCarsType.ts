@@ -1,4 +1,4 @@
-export type RentalCarType = {
+export interface RentalCarType {
 	id: number;
 	year: number;
 	make: string;

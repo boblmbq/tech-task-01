@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { LIMIT } from '../api/params';
 import { fetchAllCars, fetchPaginatedCars } from '../redux/Car/carOperations';
 import {
@@ -8,16 +7,22 @@ import {
 	selectLoading,
 } from '../redux/Car/carSelectors';
 import { clearPaginatedCars } from '../redux/Car/carSlice';
-import { FlexibleFilters } from '../types';
+import {
+	selectFilteredCars,
+	selectOnFilter,
+} from '../redux/Filter/filterSelectors';
 import { useAppDispatch, useAppSelector } from './reduxHooks';
 
 export default function useFetchCars() {
 	const dispatch = useAppDispatch();
-	const cars = useAppSelector(selectCars);
+	const paginatedCars = useAppSelector(selectCars);
+	const filteredCars = useAppSelector(selectFilteredCars);
+	const onFilter = useAppSelector(selectOnFilter);
 	const loading = useAppSelector(selectLoading);
 	const error = useAppSelector(selectError);
 	const [page, setPage] = useState(1);
-	const [searchParams] = useSearchParams();
+
+	const cars = onFilter ? filteredCars : paginatedCars;
 
 	const handleIncrementPage = () => {
 		setPage(prev => prev + 1);
@@ -25,27 +30,16 @@ export default function useFetchCars() {
 
 	useEffect(() => {
 		dispatch(clearPaginatedCars());
-	}, [dispatch, searchParams]);
+	}, [dispatch]);
 
 	useEffect(() => {
-		if (searchParams.size > 0) {
-			let filters: FlexibleFilters = {
-				brand: '',
-				price: '',
-				carMileageFrom: '',
-				carMileageTo: '',
-			};
+		dispatch(fetchAllCars());
+	}, [dispatch]);
 
-			searchParams.forEach((value, key) => {
-				filters[key] = value;
-			});
-
-			dispatch(fetchAllCars(filters));
-		} else {
-			const params = { page, limit: LIMIT };
-			dispatch(fetchPaginatedCars(params));
-		}
-	}, [page, searchParams, dispatch]);
+	useEffect(() => {
+		const params = { page, limit: LIMIT };
+		dispatch(fetchPaginatedCars(params));
+	}, [page, dispatch]);
 
 	return { cars, page, handleIncrementPage, loading, error };
 }

@@ -1,24 +1,14 @@
-//? filter logic
-// 1. let the user to choose the filters
-// 2. submitting the filters
-// 3. setting the filters in redux
-// 4. taking the filters from redux in carlist
-// 5. filtering the early fetched array of cars by using the filters with fnc. like:
-// [array].filter(car => {
-// return car.mileage < filter.fromMileage && car.mileage > filter.toMileage && ...
-// }
-// setting the cars with the filtered cars
 
-import { Field, Form, Formik, FormikHelpers } from 'formik';
+import { Field, Form, Formik } from 'formik';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/reduxHooks';
-import { fetchBrandAndPriceVariety } from '../../redux/Car/carOperations';
+import { selectOptionsVariety } from '../../redux/Car/carSelectors';
 import {
-	selectBrandVariety,
-	selectPriceVariety,
-} from '../../redux/Car/carSelectors';
+	addFilters,
+	initialFilterStateType,
+} from '../../redux/Filter/filterSlice';
 import { FlexibleFilters } from '../../types';
 
 const initialValues: FlexibleFilters = {
@@ -30,22 +20,32 @@ const initialValues: FlexibleFilters = {
 
 function CarFilter() {
 	const dispatch = useAppDispatch();
-	const brandVariety = useSelector(selectBrandVariety);
-	const priceVariety = useSelector(selectPriceVariety);
-	const [_, setSearchQuery] = useSearchParams();
+	const [brandVariety, priceVariety] = useSelector(selectOptionsVariety);
+	const [searchQuery, setSearchQuery] = useSearchParams();
 
-	useEffect(() => {
-		dispatch(fetchBrandAndPriceVariety());
-	}, [dispatch]);
-
-	const handleSubmit = (
-		values: FlexibleFilters,
-		action: FormikHelpers<FlexibleFilters>
-	) => {
+	const handleSubmit = (values: FlexibleFilters) => {
 		Object.keys(values).forEach(k => values[k] === '' && delete values[k]);
-
 		setSearchQuery(values);
 	};
+
+	useEffect(() => {
+		let filters: { [x: string]: any } & initialFilterStateType = {
+			brand: undefined,
+			price: undefined,
+			mileageFrom: undefined,
+			mileageTo: undefined,
+			onFilter: false,
+		};
+
+		if (searchQuery.size > 0) {
+			searchQuery.forEach((value, key) => {
+				filters[key] = value;
+			});
+			filters.onFilter = true;
+		}
+
+		dispatch(addFilters(filters));
+	}, [searchQuery, dispatch]);
 
 	return (
 		<div>
@@ -56,7 +56,9 @@ function CarFilter() {
 						<Field as='select' name='brand'>
 							<option value=''></option>
 							{brandVariety?.map(brand => (
-								<option value={brand}>{brand}</option>
+								<option key={brand} value={brand}>
+									{brand}
+								</option>
 							))}
 						</Field>
 					</label>
@@ -66,7 +68,9 @@ function CarFilter() {
 						<Field as='select' name='price'>
 							<option value=''></option>
 							{priceVariety?.map(price => (
-								<option value={price}>{price}</option>
+								<option key={price} value={price}>
+									{price}
+								</option>
 							))}
 						</Field>
 					</label>

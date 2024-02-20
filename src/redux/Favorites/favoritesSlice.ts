@@ -9,7 +9,7 @@ export const favoritesSliceName = 'favorites';
 
 const initialState: initialStateType = { favorites: [] };
 
-export const favoritesSlice = createSlice({
+const favoritesSlice = createSlice({
 	name: favoritesSliceName,
 	initialState,
 	reducers: {
@@ -31,3 +31,4 @@ export const favoritesSlice = createSlice({
 });
 
 export const { addToFavorites } = favoritesSlice.actions;
+export default favoritesSlice;

@@ -21,7 +21,7 @@ export const selectFilteredCars = createSelector(
 			const numberPrice: number = Number(rentalPrice.slice(1));
 
 			const isSameBrand = brand && brand?.toLowerCase() !== make.toLowerCase();
-			const isPriceSmallerOrEqual = price && Number(price) >= numberPrice;
+			const isPriceSmallerOrEqual = price && !(Number(price) >= numberPrice);
 			const isMileageFromMoreOrEqual =
 				mileageFrom && Number(mileageFrom) >= mileage;
 			const isMileageToLessOrEqual = mileageTo && Number(mileageTo) <= mileage;
@@ -29,7 +29,7 @@ export const selectFilteredCars = createSelector(
 			if (isSameBrand) {
 				return false;
 			}
-			if (!isPriceSmallerOrEqual) {
+			if (isPriceSmallerOrEqual) {
 				return false;
 			}
 			if (isMileageFromMoreOrEqual) {
@@ -38,7 +38,6 @@ export const selectFilteredCars = createSelector(
 			if (isMileageToLessOrEqual) {
 				return false;
 			}
-
 			return true;
 		});
 

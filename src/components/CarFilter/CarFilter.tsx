@@ -8,10 +8,10 @@ import { selectOptionsVariety } from '../../redux/Car';
 import { addFilters } from '../../redux/Filter';
 
 const initialValues: FlexibleFilters = {
-	brand: '',
-	price: 0,
-	mileageFrom: 0,
-	mileageTo: 0,
+	brand: undefined,
+	price: undefined,
+	mileageFrom: undefined,
+	mileageTo: undefined,
 };
 
 function CarFilter() {
@@ -20,16 +20,15 @@ function CarFilter() {
 	const [searchQuery, setSearchQuery] = useSearchParams();
 
 	const handleSubmit = (values: FlexibleFilters) => {
-		Object.keys(values).forEach(k => values[k] === '' && delete values[k]);
+		Object.keys(values).forEach(
+			k => values[k] === undefined && delete values[k]
+		);
 		setSearchQuery(values);
 	};
 
 	useEffect(() => {
 		let filters: { [x: string]: any } & filterInitialState = {
-			brand: undefined,
-			price: undefined,
-			mileageFrom: undefined,
-			mileageTo: undefined,
+			...initialValues,
 			onFilter: false,
 		};
 
@@ -39,7 +38,6 @@ function CarFilter() {
 			});
 			filters.onFilter = true;
 		}
-
 		dispatch(addFilters(filters));
 	}, [searchQuery, dispatch]);
 

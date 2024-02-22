@@ -1,15 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {filterInitialState} from 'types/Filter'
-
-
+import { filterInitialState } from 'types/Filter';
 
 const initialFilterState: filterInitialState = {
 	onFilter: false,
-		brand: undefined,
-		price: undefined,
-		mileageFrom: undefined,
-		mileageTo: undefined,
-
+	brand: undefined,
+	price: undefined,
+	mileageFrom: undefined,
+	mileageTo: undefined,
 };
 
 export const filterName = 'filter';

@@ -1,9 +1,5 @@
-import React from 'react';
 import { RestrictiveDiv } from './Container.styled';
-
-type ContainerProps = {
-	children: React.ReactElement;
-};
+import { ContainerProps } from './ContainerProps.types';
 
 function Container({ children }: ContainerProps) {
 	return <RestrictiveDiv>{children}</RestrictiveDiv>;

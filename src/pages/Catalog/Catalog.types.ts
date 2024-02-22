@@ -1,4 +1,6 @@
-import { fetchingErrorType, RentalCars } from '../../types';
+import { RentalCars } from 'types/Car';
+import { fetchingErrorType } from 'types/Error';
+
 
 export type fetchedData = {
 	data: RentalCars | undefined;

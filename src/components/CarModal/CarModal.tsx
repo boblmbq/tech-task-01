@@ -2,7 +2,6 @@ import Extras from 'components/Extras';
 import MainCarDetails from 'components/MainCarDetails/';
 import RentalConditions from 'components/RentalConditions/';
 import ButtonClose from 'icons/ButtonClose/ButtonClose';
-import { RentalCar } from 'types';
 import {
 	CarImage,
 	CarModalCloseButton,
@@ -11,11 +10,7 @@ import {
 	CarModalWrapper,
 	RentalCarModalButton,
 } from './CarModal.styled';
-
-type CarModalProps = {
-	carInfo: RentalCar;
-	handleToggleModalClick: () => void;
-};
+import { CarModalProps } from './CarModalProps.types';
 
 function CarModal({ carInfo, handleToggleModalClick }: CarModalProps) {
 	const {

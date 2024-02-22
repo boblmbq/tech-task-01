@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { RentalCars } from '../../types';
-import { selectAllCars } from '../Car/carSelectors';
+import { RentalCars } from 'types/Car';
+import { selectAllCars } from '../Car';
 import { RootState } from '../store/store';
 import filterSlice from './filterSlice';
 

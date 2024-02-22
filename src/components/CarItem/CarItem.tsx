@@ -5,7 +5,7 @@ import Modal from 'components/Modal/Modal';
 import { useAppDispatch, useAppSelector } from 'hooks/reduxHooks';
 import ButtonHeart from 'icons/ButtonHeart/ButtonHeart';
 import { useState } from 'react';
-import { RentalCar } from 'types';
+import { RentalCar } from 'types/Car';
 import { addToFavorites, selectFavorites } from '../../redux/Favorites/';
 import {
 	CarImage,

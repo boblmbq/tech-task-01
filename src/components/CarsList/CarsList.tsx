@@ -1,11 +1,9 @@
 import CarItem from 'components/CarItem/CarItem';
 import uuid from 'react-uuid';
-import { RentalCars } from 'types';
 import { CarsListWrapper } from './CarsList.styled';
+import { CarListProps } from './CarListProps.types';
 
-type CarListType = { data: RentalCars };
-
-function CarsList({ data }: CarListType) {
+function CarsList({ data }: CarListProps) {
 	return (
 		<CarsListWrapper>
 			{data.map(car => (

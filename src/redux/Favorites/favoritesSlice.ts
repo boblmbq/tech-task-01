@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RentalCar, RentalCars } from '../../types';
+import { RentalCar, RentalCars } from 'types/Car';
 
 export interface initialStateType {
 	favorites: RentalCars | never;

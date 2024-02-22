@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { MouseEventType } from 'types';
+import { MouseEventCustomized } from 'types/Events';
 import { ModalWrapper } from './Modal.styled';
-
-type ModalProps = {
-	handleClose: () => void;
-	children: React.ReactElement;
-};
+import { ModalProps } from './ModalProps.types';
 
 function Modal({ handleClose, children }: ModalProps) {
 	const modalContainer = document.getElementById('portal');
@@ -17,7 +13,7 @@ function Modal({ handleClose, children }: ModalProps) {
 		}
 	};
 
-	const handleBackdropClick = (event: MouseEventType) => {
+	const handleBackdropClick = (event: MouseEventCustomized) => {
 		const { target, currentTarget } = event;
 		if (target === currentTarget) handleClose();
 	};
@@ -38,7 +34,7 @@ function Modal({ handleClose, children }: ModalProps) {
 
 	return ReactDOM.createPortal(
 		<ModalWrapper
-			onClick={(event: MouseEventType) => handleBackdropClick(event)}
+			onClick={(event: MouseEventCustomized) => handleBackdropClick(event)}
 		>
 			{children}
 		</ModalWrapper>,
@@ -46,4 +42,4 @@ function Modal({ handleClose, children }: ModalProps) {
 	);
 }
 
-export default Modal
+export default Modal;

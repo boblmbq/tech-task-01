@@ -1,11 +1,7 @@
 import { Button, ButtonWrapper } from './LoadMoreBtn.styled';
+import { LoadMoreBtnProps } from './LoadMoreBtn.types';
 
-function LoadMoreBtn({
-	handleIncrementPage,
-}: {
-	handleIncrementPage: () => void;
-}) {
-
+function LoadMoreBtn({ handleIncrementPage }: LoadMoreBtnProps) {
 	return (
 		<ButtonWrapper>
 			<Button type='button' onClick={() => handleIncrementPage()}>

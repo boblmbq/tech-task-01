@@ -1,1 +1,1 @@
-export type KeyboardEventType = React.KeyboardEvent;
+export type KeyboardEvent = React.KeyboardEvent;

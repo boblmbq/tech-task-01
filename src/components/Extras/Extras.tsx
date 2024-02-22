@@ -1,8 +1,6 @@
 import { CategoriesModalTitleWrapper } from 'components/CarModal/CarModal.styled';
 import DetailedInfoList from 'components/DetailedInfoListWrapper';
-type ExtrasProps = {
-	extrasInfo: string[];
-};
+import { ExtrasProps } from './ExtrasProps.types';
 
 function Extras({ extrasInfo }: ExtrasProps) {
 	return (

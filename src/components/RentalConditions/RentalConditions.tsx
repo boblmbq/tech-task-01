@@ -1,18 +1,11 @@
 import { HighlightedText } from 'components/CarItem/CarItem.styled';
 import { CategoriesModalTitleWrapper } from 'components/CarModal/CarModal.styled';
 import { ConditionsListWrapper } from './RentalConditions.styled';
+import { RentalConditionsProps } from './RentalConditionsProps.types';
 
-type RentalConditionsProps = {
-	conditions: string;
-	mileage: number;
-	rentalPrice: string;
-};
+function RentalConditions(rentalConditions: RentalConditionsProps) {
+	const { conditions, mileage, rentalPrice } = rentalConditions;
 
-function RentalConditions({
-	conditions,
-	mileage,
-	rentalPrice,
-}: RentalConditionsProps) {
 	const conditionsArray = conditions.split('\n');
 	const minimumAgeText = conditionsArray[0].split(':');
 

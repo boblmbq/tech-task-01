@@ -5,22 +5,11 @@ import {
 } from 'components/CarModal/CarModal.styled';
 import DetailedInfoList from 'components/DetailedInfoListWrapper';
 import { DetailedListModalWrapper } from './MainCarDetails.styled';
+import { MainCarDetailsProps } from './MainCarDetailsProps.types';
 
-type MainCarDetailsProps = {
-	make: string;
-	year: number;
-	model: string;
-	mainCarInfo: string[];
-	description: string;
-};
+function MainCarDetails(mainDetails: MainCarDetailsProps) {
+	const { make, year, model, mainCarInfo, description } = mainDetails;
 
-function MainCarDetails({
-	make,
-	year,
-	model,
-	mainCarInfo,
-	description,
-}: MainCarDetailsProps) {
 	return (
 		<div>
 			<CarModalNameYearText>

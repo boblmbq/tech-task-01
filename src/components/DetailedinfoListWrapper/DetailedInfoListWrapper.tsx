@@ -1,14 +1,11 @@
-import uuid from 'react-uuid';
 import {
 	DetailedInfoListWrapper,
 	DetailedInfoTextWrapper,
 } from 'components/CarsList/CarsList.styled';
+import uuid from 'react-uuid';
+import { DetailedInfoListWrapperProps } from './DetailedInfoListWrapperProps.types';
 
-function DetailedInfoList({
-	information,
-}: {
-	information: (string | number)[];
-}) {
+function DetailedInfoList({ information }: DetailedInfoListWrapperProps) {
 	return (
 		<DetailedInfoListWrapper>
 			{information.map(info => (

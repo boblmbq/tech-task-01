@@ -2,7 +2,7 @@ import uuid from 'react-uuid';
 import {
 	DetailedInfoListWrapper,
 	DetailedInfoTextWrapper,
-} from '../CarsList/CarsList.styled';
+} from 'components/CarsList/CarsList.styled';
 
 function DetailedInfoList({
 	information,

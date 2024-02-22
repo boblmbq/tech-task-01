@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { RentalCarsType } from '../../types';
+import { RentalCars } from '../../types';
 import { selectAllCars } from '../Car/carSelectors';
 import { RootState } from '../store/store';
 import filterSlice from './filterSlice';
@@ -16,7 +16,7 @@ export const selectOnFilter = (state: RootState) =>
 export const selectFilteredCars = createSelector(
 	[selectBrand, selectPrice, selectMileageFrom, selectMileageTo, selectAllCars],
 
-	(brand, price, mileageFrom, mileageTo, cars: RentalCarsType) => {
+	(brand, price, mileageFrom, mileageTo, cars: RentalCars) => {
 		const filteredCars = cars.filter(({ make, rentalPrice, mileage }) => {
 			const numberPrice: number = Number(rentalPrice.slice(1));
 

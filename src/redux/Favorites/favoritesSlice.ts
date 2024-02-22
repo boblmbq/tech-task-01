@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RentalCarType, RentalCarsType } from '../../types';
+import { RentalCar, RentalCars } from '../../types';
 
 export interface initialStateType {
-	favorites: RentalCarsType | never;
+	favorites: RentalCars | never;
 }
 
 export const favoritesSliceName = 'favorites';
@@ -15,7 +15,7 @@ const favoritesSlice = createSlice({
 	reducers: {
 		addToFavorites(
 			{ favorites },
-			{ payload }: { payload: { carItem: RentalCarType } }
+			{ payload }: { payload: { carItem: RentalCar } }
 		) {
 			const favoriteCarIndex = favorites.findIndex(element => {
 				return element.id === payload.carItem.id;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { MouseEventType } from '../../types';
+import { MouseEventType } from 'types';
 import { ModalWrapper } from './Modal.styled';
 
 type ModalProps = {
@@ -8,7 +8,7 @@ type ModalProps = {
 	children: React.ReactElement;
 };
 
-export function Modal({ handleClose, children }: ModalProps) {
+function Modal({ handleClose, children }: ModalProps) {
 	const modalContainer = document.getElementById('portal');
 
 	const handleEscapeClick = (event: KeyboardEvent) => {
@@ -45,3 +45,5 @@ export function Modal({ handleClose, children }: ModalProps) {
 		modalContainer
 	);
 }
+
+export default Modal

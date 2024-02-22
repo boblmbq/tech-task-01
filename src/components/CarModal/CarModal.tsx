@@ -1,6 +1,8 @@
-import ButtonClose from '../../icons/ButtonClose/ButtonClose';
-import { RentalCarType } from '../../types';
-import Extras from './AccessoriesFunctionalities/AccessoriesFunctionalities';
+import Extras from 'components/Extras';
+import MainCarDetails from 'components/MainCarDetails/';
+import RentalConditions from 'components/RentalConditions/';
+import ButtonClose from 'icons/ButtonClose/ButtonClose';
+import { RentalCar } from 'types';
 import {
 	CarImage,
 	CarModalCloseButton,
@@ -9,11 +11,9 @@ import {
 	CarModalWrapper,
 	RentalCarModalButton,
 } from './CarModal.styled';
-import MainCarDetails from './MainCarDetails/MainCarDetails';
-import RentalConditions from './RentalConditions/RentalConditions';
 
 type CarModalProps = {
-	carInfo: RentalCarType;
+	carInfo: RentalCar;
 	handleToggleModalClick: () => void;
 };
 

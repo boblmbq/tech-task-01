@@ -1,5 +1,5 @@
-import { HighlightedText } from '../../CarItem/CarItem.styled';
-import { CategoriesModalTitleWrapper } from '../CarModal.styled';
+import { HighlightedText } from 'components/CarItem/CarItem.styled';
+import { CategoriesModalTitleWrapper } from 'components/CarModal/CarModal.styled';
 import { ConditionsListWrapper } from './RentalConditions.styled';
 
 type RentalConditionsProps = {

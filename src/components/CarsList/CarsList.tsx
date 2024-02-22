@@ -1,9 +1,9 @@
+import CarItem from 'components/CarItem/CarItem';
 import uuid from 'react-uuid';
-import { RentalCarsType } from '../../types';
-import CarItem from '../CarItem/CarItem';
+import { RentalCars } from 'types';
 import { CarsListWrapper } from './CarsList.styled';
 
-type CarListType = { data: RentalCarsType };
+type CarListType = { data: RentalCars };
 
 function CarsList({ data }: CarListType) {
 	return (

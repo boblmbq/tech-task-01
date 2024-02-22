@@ -1,21 +1,17 @@
-
 import { Field, Form, Formik } from 'formik';
+import { useAppDispatch } from 'hooks/reduxHooks';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from '../../hooks/reduxHooks';
-import { selectOptionsVariety } from '../../redux/Car/carSelectors';
-import {
-	addFilters,
-	initialFilterStateType,
-} from '../../redux/Filter/filterSlice';
-import { FlexibleFilters } from '../../types';
+import { FlexibleFilters, filterInitialState } from 'types/Filter';
+import { selectOptionsVariety } from '../../redux/Car';
+import { addFilters } from '../../redux/Filter';
 
 const initialValues: FlexibleFilters = {
 	brand: '',
-	price: '',
-	carMileageFrom: '',
-	carMileageTo: '',
+	price: 0,
+	mileageFrom: 0,
+	mileageTo: 0,
 };
 
 function CarFilter() {
@@ -29,7 +25,7 @@ function CarFilter() {
 	};
 
 	useEffect(() => {
-		let filters: { [x: string]: any } & initialFilterStateType = {
+		let filters: { [x: string]: any } & filterInitialState = {
 			brand: undefined,
 			price: undefined,
 			mileageFrom: undefined,

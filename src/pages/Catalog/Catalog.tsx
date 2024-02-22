@@ -1,8 +1,8 @@
-import { LIMIT } from '../../api/params';
-import CarFilter from '../../components/CarFilter/CarFilter';
-import CarsList from '../../components/CarsList/CarsList';
-import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
-import useFetchCars from '../../hooks/useFetchCars';
+import { LIMIT } from 'api/params';
+import CarFilter from 'components/CarFilter/CarFilter';
+import CarsList from 'components/CarsList/CarsList';
+import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
+import useFetchCars from 'hooks/useFetchCars';
 import { CatalogWrapper } from './Catalog.styled';
 
 function Catalog() {

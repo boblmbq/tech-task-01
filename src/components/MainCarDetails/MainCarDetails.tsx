@@ -1,9 +1,9 @@
-import { HighlightedText } from '../../CarItem/CarItem.styled';
-import DetailedInfoList from '../../DetailedInfoListWrapper/DetailedInfoListWrapper';
+import { HighlightedText } from 'components/CarItem/CarItem.styled';
 import {
 	CarModalNameYearText,
 	DescriptionModalWrapper,
-} from '../CarModal.styled';
+} from 'components/CarModal/CarModal.styled';
+import DetailedInfoList from 'components/DetailedInfoListWrapper';
 import { DetailedListModalWrapper } from './MainCarDetails.styled';
 
 type MainCarDetailsProps = {

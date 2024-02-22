@@ -1,5 +1,5 @@
-import DetailedInfoList from '../../DetailedInfoListWrapper/DetailedInfoListWrapper';
-import { CategoriesModalTitleWrapper } from '../CarModal.styled';
+import { CategoriesModalTitleWrapper } from 'components/CarModal/CarModal.styled';
+import DetailedInfoList from 'components/DetailedInfoListWrapper';
 type ExtrasProps = {
 	extrasInfo: string[];
 };
@@ -11,7 +11,7 @@ function Extras({ extrasInfo }: ExtrasProps) {
 				Accessories and functionalities:
 			</CategoriesModalTitleWrapper>
 
-				<DetailedInfoList information={extrasInfo} />
+			<DetailedInfoList information={extrasInfo} />
 		</div>
 	);
 }

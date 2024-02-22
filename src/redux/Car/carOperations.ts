@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import MOCK_API_BASE_URL from '../../api/api';
-import { RENTAL_CARS } from '../../api/endpoints';
-import { ParamType } from '../../types';
+import MOCK_API_BASE_URL from 'api/api';
+import { RENTAL_CARS } from 'api/endpoints';
+import { ParamType } from 'types';
 
 export const fetchAllCars = createAsyncThunk('fetchAllCars', async thunkApi => {
 	try {

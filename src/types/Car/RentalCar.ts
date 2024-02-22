@@ -1,4 +1,4 @@
-export interface RentalCarType {
+export interface RentalCar {
 	id: number;
 	year: number;
 	make: string;
@@ -15,6 +15,4 @@ export interface RentalCarType {
 	address: string;
 	rentalConditions: string;
 	mileage: number;
-};
-
-export type RentalCarsType = RentalCarType[];
+}

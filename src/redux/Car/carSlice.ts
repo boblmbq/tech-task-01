@@ -1,23 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RentalCarsType } from '../../types';
+import { carInitialState, RentalCars } from 'types/Car';
 import { fetchAllCars, fetchPaginatedCars } from './carOperations';
 
-export interface InitialStateType {
-	cars: RentalCarsType | never;
-	allCars: RentalCarsType | never;
-	loading: boolean;
-	error: null | string;
-}
-
-const handlePending = (state: InitialStateType) => {
+const handlePending = (state: carInitialState) => {
 	state.loading = true;
 };
 
-const handleRejected = (state: InitialStateType) => {
+const handleRejected = (state: carInitialState) => {
 	state.error = 'Something went wrong';
 };
 
-const initialState: InitialStateType = {
+const initialState: carInitialState = {
 	cars: [],
 	allCars: [],
 	loading: false,
@@ -38,13 +31,13 @@ const carSlice = createSlice({
 		builder
 			.addCase(
 				fetchAllCars.fulfilled,
-				(state, action: PayloadAction<RentalCarsType>) => {
+				(state, action: PayloadAction<RentalCars>) => {
 					state.allCars = action.payload;
 				}
 			)
 			.addCase(
 				fetchPaginatedCars.fulfilled,
-				(state, action: PayloadAction<RentalCarsType>) => {
+				(state, action: PayloadAction<RentalCars>) => {
 					state.cars.push(...action.payload);
 				}
 			)

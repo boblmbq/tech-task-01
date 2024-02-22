@@ -1,14 +1,12 @@
+import CarModal from 'components/CarModal/CarModal';
+import { DetailedInfoListsWrapper } from 'components/CarsList/CarsList.styled';
+import DetailedInfoList from 'components/DetailedInfoListWrapper/DetailedInfoListWrapper';
+import Modal from 'components/Modal/Modal';
+import { useAppDispatch, useAppSelector } from 'hooks/reduxHooks';
+import ButtonHeart from 'icons/ButtonHeart/ButtonHeart';
 import { useState } from 'react';
-import ButtonHeart from '../../icons/ButtonHeart/ButtonHeart';
-import { addToFavorites } from '../../redux/Favorites/favoritesSlice';
-
-import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
-import { selectFavorites } from '../../redux/Favorites/favoritesSelectors';
-import { RentalCarType } from '../../types';
-import CarModal from '../CarModal/CarModal';
-import { DetailedInfoListsWrapper } from '../CarsList/CarsList.styled';
-import DetailedInfoList from '../DetailedInfoListWrapper/DetailedInfoListWrapper';
-import { Modal } from '../Modal/Modal';
+import { RentalCar } from 'types';
+import { addToFavorites, selectFavorites } from '../../redux/Favorites/';
 import {
 	CarImage,
 	CarImageWrapper,
@@ -20,7 +18,7 @@ import {
 	LearnMoreBtn,
 } from './CarItem.styled';
 
-function CarItem(car: RentalCarType) {
+function CarItem(car: RentalCar) {
 	const {
 		id,
 		year,

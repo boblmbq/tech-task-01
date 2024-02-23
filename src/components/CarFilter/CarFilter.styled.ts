@@ -1,4 +1,4 @@
-import { Field, Form } from 'formik';
+import { Form } from 'formik';
 import styled from 'styled-components';
 
 export const FormikWrapper = styled.div`
@@ -31,18 +31,18 @@ export const LabelStyled = styled.label`
 	padding: 0 14px;
 	background: #f7f7fb;
 	border-radius: 14px;
-`;
 
-export const FieldStyled = styled(Field)`
-	border: none;
-	background: transparent;
-	width: 90%;
+	& > select {
+		border: none;
+		background: transparent;
+		width: 100%;
 
-	font-weight: 500;
-	font-size: 18px;
-	text-wrap: nowrap;
-	line-height: 1.11;
-	color: #121417;
+		font-weight: 500;
+		font-size: 18px;
+		text-wrap: nowrap;
+		line-height: 1.11;
+		color: #121417;
+	}
 `;
 
 export const ExplanationFieldText = styled.p`
@@ -75,8 +75,20 @@ export const MileageFromLabel = styled.label`
 	width: 49%;
 	padding: 0 14px;
 	background: #f7f7fb;
-	border-right: 1px solid black;
+	border-right: 1px solid #8a8a8920;
 	border-radius: 14px 0 0 14px;
+
+	& > input {
+		border: none;
+		background: transparent;
+		width: 100%;
+
+		font-weight: 500;
+		font-size: 18px;
+		text-wrap: nowrap;
+		line-height: 1.11;
+		color: #121417;
+	}
 `;
 
 export const MileageToLabel = styled.label`
@@ -88,6 +100,18 @@ export const MileageToLabel = styled.label`
 	padding: 0 14px;
 	background: #f7f7fb;
 	border-radius: 0 14px 14px 0;
+
+	& > input {
+		border: none;
+		background: transparent;
+		width: 100%;
+
+		font-weight: 500;
+		font-size: 18px;
+		text-wrap: nowrap;
+		line-height: 1.11;
+		color: #121417;
+	}
 `;
 
 export const SubmitButton = styled.button`
@@ -95,4 +119,11 @@ export const SubmitButton = styled.button`
 	padding: 14px 44px;
 	width: 136px;
 	height: 48px;
+
+	background: #3470ff;
+	transition: background 0.3s ease-out;
+
+	&:hover {
+		background: #0b44cd;
+	}
 `;

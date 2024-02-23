@@ -74,4 +74,10 @@ export const RentalCarModalButton = styled.button`
 	cursor: pointer;
 	border: none;
 	border-radius: 12px;
+
+	transition: background 0.3s ease-out;
+
+	&:hover {
+		background: #0b44cd;
+	}
 `;

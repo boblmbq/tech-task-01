@@ -7,13 +7,15 @@ function SharedLayout() {
 	return (
 		<>
 			<Header />
-			<section>
-				<Container>
-					<Suspense fallback='loading'>
-						<Outlet />
-					</Suspense>
-				</Container>
-			</section>
+			<main>
+				<section>
+					<Container>
+						<Suspense fallback='loading'>
+							<Outlet />
+						</Suspense>
+					</Container>
+				</section>
+			</main>
 		</>
 	);
 }

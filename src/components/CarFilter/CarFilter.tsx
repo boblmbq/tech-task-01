@@ -1,4 +1,4 @@
-import { Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import { useAppDispatch } from 'hooks/reduxHooks';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -8,7 +8,6 @@ import { selectOptionsVariety } from '../../redux/Car';
 import { addFilters } from '../../redux/Filter';
 import {
 	ExplanationFieldText,
-	FieldStyled,
 	FormStyled,
 	FormikWrapper,
 	LabelDescription,
@@ -21,10 +20,10 @@ import {
 } from './CarFilter.styled';
 
 const initialValues: FlexibleFilters = {
-	brand: undefined,
-	price: undefined,
-	mileageFrom: undefined,
-	mileageTo: undefined,
+	brand: '',
+	price: '',
+	mileageFrom: '',
+	mileageTo: '',
 };
 
 function CarFilter() {
@@ -33,10 +32,9 @@ function CarFilter() {
 	const [searchQuery, setSearchQuery] = useSearchParams();
 
 	const handleSubmit = (values: FlexibleFilters) => {
-		Object.keys(values).forEach(
-			k => values[k] === undefined && delete values[k]
-		);
-		setSearchQuery(values);
+		const filters = { ...values };
+		Object.keys(filters).forEach(k => filters[k] === '' && delete filters[k]);
+		setSearchQuery(filters);
 	};
 
 	useEffect(() => {
@@ -57,18 +55,18 @@ function CarFilter() {
 	return (
 		<FormikWrapper>
 			<Formik initialValues={initialValues} onSubmit={handleSubmit}>
-				<FormStyled>
+				<FormStyled autoComplete='off'>
 					<LabelWrapper>
 						<LabelDescription>Car brand</LabelDescription>
 						<LabelStyled>
-							<FieldStyled as='select' name='brand'>
+							<Field as='select' name='brand'>
 								<option value=''>Enter the Text</option>
 								{brandVariety?.map(brand => (
 									<option key={brand} value={brand}>
 										{brand}
 									</option>
 								))}
-							</FieldStyled>
+							</Field>
 						</LabelStyled>
 					</LabelWrapper>
 
@@ -76,14 +74,14 @@ function CarFilter() {
 						<LabelDescription>Price&#x2F; 1 hour</LabelDescription>
 						<LabelStyled>
 							<ExplanationFieldText>To &#x24;</ExplanationFieldText>
-							<FieldStyled as='select' name='price'>
+							<Field as='select' name='price'>
 								<option value=''></option>
 								{priceVariety?.map(price => (
 									<option key={price} value={price}>
 										{price}
 									</option>
 								))}
-							</FieldStyled>
+							</Field>
 						</LabelStyled>
 					</LabelWrapper>
 
@@ -93,12 +91,12 @@ function CarFilter() {
 						<MileageLabelWrapper>
 							<MileageFromLabel>
 								<ExplanationFieldText>From</ExplanationFieldText>
-								<FieldStyled name='mileageFrom' />
+								<Field as='input' name='mileageFrom' />
 							</MileageFromLabel>
 
 							<MileageToLabel>
 								<ExplanationFieldText>To</ExplanationFieldText>
-								<FieldStyled name='mileageTo' />
+								<Field as='input' name='mileageTo' />
 							</MileageToLabel>
 						</MileageLabelWrapper>
 					</LabelWrapper>

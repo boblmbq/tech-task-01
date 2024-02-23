@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ButtonWrapper = styled.div`
 	display: flex;
 	justify-content: center;
-	padding: 100px 0;
+	padding: 50px 0;
 `;
 
 export const Button = styled.button`

@@ -29,6 +29,14 @@ export const FavoriteButton = styled.button`
 	border: none;
 	background: transparent;
 	cursor: pointer;
+
+	&:hover {
+		background: transparent;
+		path {
+			fill: #3470ff;
+			stroke: #3470ff;
+		}
+	}
 `;
 
 export const CarNamePriceWrapper = styled.div`
@@ -56,12 +64,11 @@ export const LearnMoreBtn = styled.button`
 	padding: 12px;
 	width: 100%;
 	height: 44px;
-	background: #3470ff;
 	border: none;
 	cursor: pointer;
-	// transition: transform 0.3s ease-out, background 0.3s ease-out;
-	// transform: translateZ(0);
-	will-change: transform;
+	
+	background: #3470ff;
+	transition: background 0.3s ease-out;
 
 	font-family: var(--font-family);
 	font-weight: 600;
@@ -70,6 +77,6 @@ export const LearnMoreBtn = styled.button`
 	color: #fff;
 
 	&:hover {
-		// transform: scale(1.01);
+		background: #0b44cd;
 	}
 `;

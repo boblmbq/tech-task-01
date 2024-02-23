@@ -1,6 +1,6 @@
 export interface Filters {
 	brand: string | undefined;
-	price: number | undefined;
-	mileageFrom: number | undefined;
-	mileageTo: number | undefined;
+	price: string | undefined;
+	mileageFrom: string | undefined;
+	mileageTo: string | undefined;
 }

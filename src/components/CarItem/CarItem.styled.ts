@@ -59,8 +59,8 @@ export const LearnMoreBtn = styled.button`
 	background: #3470ff;
 	border: none;
 	cursor: pointer;
-	transition: transform 0.3s ease-out;
-	transform: translateZ(0);
+	// transition: transform 0.3s ease-out, background 0.3s ease-out;
+	// transform: translateZ(0);
 	will-change: transform;
 
 	font-family: var(--font-family);
@@ -70,7 +70,6 @@ export const LearnMoreBtn = styled.button`
 	color: #fff;
 
 	&:hover {
-		transform: scale(1.01);
-		background: #0b53ff;
+		// transform: scale(1.01);
 	}
 `;

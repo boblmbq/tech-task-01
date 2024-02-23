@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useAppDispatch } from 'hooks/reduxHooks';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -6,6 +6,19 @@ import { useSearchParams } from 'react-router-dom';
 import { FlexibleFilters, filterInitialState } from 'types/Filter';
 import { selectOptionsVariety } from '../../redux/Car';
 import { addFilters } from '../../redux/Filter';
+import {
+	ExplanationFieldText,
+	FieldStyled,
+	FormStyled,
+	FormikWrapper,
+	LabelDescription,
+	LabelStyled,
+	LabelWrapper,
+	MileageFromLabel,
+	MileageLabelWrapper,
+	MileageToLabel,
+	SubmitButton,
+} from './CarFilter.styled';
 
 const initialValues: FlexibleFilters = {
 	brand: undefined,
@@ -42,42 +55,57 @@ function CarFilter() {
 	}, [searchQuery, dispatch]);
 
 	return (
-		<div>
+		<FormikWrapper>
 			<Formik initialValues={initialValues} onSubmit={handleSubmit}>
-				<Form>
-					<label>
-						brand
-						<Field as='select' name='brand'>
-							<option value=''></option>
-							{brandVariety?.map(brand => (
-								<option key={brand} value={brand}>
-									{brand}
-								</option>
-							))}
-						</Field>
-					</label>
+				<FormStyled>
+					<LabelWrapper>
+						<LabelDescription>Car brand</LabelDescription>
+						<LabelStyled>
+							<FieldStyled as='select' name='brand'>
+								<option value=''>Enter the Text</option>
+								{brandVariety?.map(brand => (
+									<option key={brand} value={brand}>
+										{brand}
+									</option>
+								))}
+							</FieldStyled>
+						</LabelStyled>
+					</LabelWrapper>
 
-					<label>
-						price
-						<Field as='select' name='price'>
-							<option value=''></option>
-							{priceVariety?.map(price => (
-								<option key={price} value={price}>
-									{price}
-								</option>
-							))}
-						</Field>
-					</label>
+					<LabelWrapper>
+						<LabelDescription>Price&#x2F; 1 hour</LabelDescription>
+						<LabelStyled>
+							<ExplanationFieldText>To &#x24;</ExplanationFieldText>
+							<FieldStyled as='select' name='price'>
+								<option value=''></option>
+								{priceVariety?.map(price => (
+									<option key={price} value={price}>
+										{price}
+									</option>
+								))}
+							</FieldStyled>
+						</LabelStyled>
+					</LabelWrapper>
 
-					<label>
-						<Field name='carMileageFrom' />
-						<Field name='carMileageTo' />
-					</label>
+					<LabelWrapper>
+						<LabelDescription>Car mileage &#x2F; km</LabelDescription>
 
-					<button type='submit'>Search</button>
-				</Form>
+						<MileageLabelWrapper>
+							<MileageFromLabel>
+								<ExplanationFieldText>From</ExplanationFieldText>
+								<FieldStyled name='mileageFrom' />
+							</MileageFromLabel>
+
+							<MileageToLabel>
+								<ExplanationFieldText>To</ExplanationFieldText>
+								<FieldStyled name='mileageTo' />
+							</MileageToLabel>
+						</MileageLabelWrapper>
+					</LabelWrapper>
+					<SubmitButton type='submit'>Search</SubmitButton>
+				</FormStyled>
 			</Formik>
-		</div>
+		</FormikWrapper>
 	);
 }
 

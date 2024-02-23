@@ -15,7 +15,10 @@ export const Button = styled.button`
 	color: #3470ff;
 	cursor: pointer;
 
+	transition: color 0.3s ease-out;
+
 	&:hover {
 		color: #0b44cd;
+		background: transparent;
 	}
 `;

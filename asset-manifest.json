@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/tech-task-01/static/css/main.b5c9c65a.css",
-    "main.js": "/tech-task-01/static/js/main.28a9bf2a.js",
-    "static/js/592.0f66d9f1.chunk.js": "/tech-task-01/static/js/592.0f66d9f1.chunk.js",
-    "static/js/244.79bab1f1.chunk.js": "/tech-task-01/static/js/244.79bab1f1.chunk.js",
-    "static/js/656.c1a7a947.chunk.js": "/tech-task-01/static/js/656.c1a7a947.chunk.js",
-    "static/js/836.c4b147b4.chunk.js": "/tech-task-01/static/js/836.c4b147b4.chunk.js",
-    "static/js/808.d56ef50f.chunk.js": "/tech-task-01/static/js/808.d56ef50f.chunk.js",
-    "static/js/644.657a1e07.chunk.js": "/tech-task-01/static/js/644.657a1e07.chunk.js",
-    "index.html": "/tech-task-01/index.html",
-    "main.b5c9c65a.css.map": "/tech-task-01/static/css/main.b5c9c65a.css.map",
-    "main.28a9bf2a.js.map": "/tech-task-01/static/js/main.28a9bf2a.js.map",
-    "592.0f66d9f1.chunk.js.map": "/tech-task-01/static/js/592.0f66d9f1.chunk.js.map",
-    "244.79bab1f1.chunk.js.map": "/tech-task-01/static/js/244.79bab1f1.chunk.js.map",
-    "656.c1a7a947.chunk.js.map": "/tech-task-01/static/js/656.c1a7a947.chunk.js.map",
-    "836.c4b147b4.chunk.js.map": "/tech-task-01/static/js/836.c4b147b4.chunk.js.map",
-    "808.d56ef50f.chunk.js.map": "/tech-task-01/static/js/808.d56ef50f.chunk.js.map",
-    "644.657a1e07.chunk.js.map": "/tech-task-01/static/js/644.657a1e07.chunk.js.map"
+    "main.css": "/urban-wheels/static/css/main.b5c9c65a.css",
+    "main.js": "/urban-wheels/static/js/main.10889d79.js",
+    "static/js/592.15e1734f.chunk.js": "/urban-wheels/static/js/592.15e1734f.chunk.js",
+    "static/js/244.ce5cee18.chunk.js": "/urban-wheels/static/js/244.ce5cee18.chunk.js",
+    "static/js/656.b7568038.chunk.js": "/urban-wheels/static/js/656.b7568038.chunk.js",
+    "static/js/836.1dc53ad8.chunk.js": "/urban-wheels/static/js/836.1dc53ad8.chunk.js",
+    "static/js/808.4f47c859.chunk.js": "/urban-wheels/static/js/808.4f47c859.chunk.js",
+    "static/js/644.228175c7.chunk.js": "/urban-wheels/static/js/644.228175c7.chunk.js",
+    "index.html": "/urban-wheels/index.html",
+    "main.b5c9c65a.css.map": "/urban-wheels/static/css/main.b5c9c65a.css.map",
+    "main.10889d79.js.map": "/urban-wheels/static/js/main.10889d79.js.map",
+    "592.15e1734f.chunk.js.map": "/urban-wheels/static/js/592.15e1734f.chunk.js.map",
+    "244.ce5cee18.chunk.js.map": "/urban-wheels/static/js/244.ce5cee18.chunk.js.map",
+    "656.b7568038.chunk.js.map": "/urban-wheels/static/js/656.b7568038.chunk.js.map",
+    "836.1dc53ad8.chunk.js.map": "/urban-wheels/static/js/836.1dc53ad8.chunk.js.map",
+    "808.4f47c859.chunk.js.map": "/urban-wheels/static/js/808.4f47c859.chunk.js.map",
+    "644.228175c7.chunk.js.map": "/urban-wheels/static/js/644.228175c7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5c9c65a.css",
-    "static/js/main.28a9bf2a.js"
+    "static/js/main.10889d79.js"
   ]
 }

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkurban_wheels=self.webpackChunkurban_wheels||[]).push([[244],{244:(e,n,s)=>{s.r(n),s.d(n,{default:()=>r});var u=s(496);const r=function(){return(0,u.jsx)("div",{children:"home page"})}}}]);
+//# sourceMappingURL=244.ce5cee18.chunk.js.map

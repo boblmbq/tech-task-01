@@ -1,5 +1,5 @@
-import { RestrictiveDiv } from './Container.styled';
-import { ContainerProps } from './ContainerProps.types';
+import { ContainerProps } from '../ContainerProps.types';
+import { RestrictiveDiv } from './MainContainer.styled';
 
 function Container({ children }: ContainerProps) {
 	return <RestrictiveDiv>{children}</RestrictiveDiv>;

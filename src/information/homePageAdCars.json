@@ -1,0 +1,38 @@
+[
+	{
+		"image": "https://ftp.goit.study/img/cars-test-task/bentley_azure.jpeg",
+		"text": "The Tesla Model Y is an all-electric compact SUV offering impressive range and acceleration. With its sleek design and advanced technology features, it's perfect for eco-conscious drivers looking for both style and performance."
+	},
+	{
+		"image": "https://ftp.goit.study/img/cars-test-task/aston_martin_dbs.jpeg",
+		"text": "The Aston Martin Vantage is a luxury sports car renowned for its stunning design and exhilarating performance. With its powerful engine and precision handling, it delivers a driving experience that's second to none."
+	},
+	{
+		"image": "https://ftp.goit.study/img/cars-test-task/audi_a5.jpeg",
+		"text": "The Audi A5 is a sophisticated coupe that combines elegant styling with impressive performance. From its luxurious interior to its dynamic driving dynamics, every aspect of the A5 is designed to delight."
+	},
+	{
+		"image": "https://imgs.search.brave.com/XRnYJdgCRt_k8URlH5fj_V10mRabnLj1aNFq6vJKdVY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/YnVpY2suY29tL2Nv/bnRlbnQvZGFtL2J1/aWNrL25hL3VzL2Vu/L2luZGV4L3Nob3Bw/aW5nLXRvb2xzL29m/ZmVycy9yZXRhaWwt/bGFuZGluZy8yMDI0/L2ZlYnJ1YXJ5LzAx/LWltYWdlcy8yMDI0/LWJ1aWNrLWVuY2xh/dmUtYXZlbmlyLTI0/QlVFTjAwMDI2LW1o/LTE4Mjl4OTI0Lmpw/Zz9pbXdpZHRoPTk2/MA",
+		"text": "The Buick Enclave is a spacious and stylish SUV perfect for families on the go. With its comfortable seating, advanced safety features, and versatile cargo space, it's the ultimate choice for all your adventures."
+	},
+	{
+		"image": "https://imgs.search.brave.com/oxDlCQ8YA6sJ-IRH569p6TN8vxtTDDdFgO_MGfduQ3E/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/YXV0b2xpc3QuY29t/LzZ0dWVtNzN1NzNh/bi82QTRLcUxtNEll/T25rWldQeDZuSFpn/LzhkOWJlM2MyYTE0/NGZjNDE0ZWY0YTFk/ZDQxMjFmYTFhL0pl/ZXBfV3JhbmdsZXJf/NHRoX0dlbmVyYXRp/b24uanBn",
+		"text": "The Jeep Wrangler is an iconic off-road vehicle known for its rugged capability and adventurous spirit. Whether you're tackling tough terrain or cruising through the city, the Wrangler is ready for anything."
+	},
+	{
+		"image": "https://imgs.search.brave.com/bfmC8oUed6nyf7sj_LTY_MWXeXwaLcKv7tM6bFymbS0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kaWdp/dGFsYXNzZXRzLnRl/c2xhLmNvbS90ZXNs/YS1jb250ZW50cy9p/bWFnZS91cGxvYWQv/Zl9hdXRvLHFfYXV0/by9Nb2RlbC1ZLUNo/YXJnaW5nLUNhcm91/c2VsLVNsaWRlLTEt/U2xlZXAtRGVza3Rv/cC1FTUVBLmpwZw",
+		"text": "The Tesla Model Y is a groundbreaking electric SUV that combines cutting-edge technology with sleek design. With impressive range, fast acceleration, and advanced Autopilot features, it's redefining the future of transportation."
+	},
+	{
+		"image": "https://ftp.goit.study/img/cars-test-task/lamborghini_murcielago.jpeg",
+		"text": "The Lamborghini Aventador is a masterpiece of automotive engineering and design. With its breathtaking performance and unmistakable style, it's the ultimate dream car for enthusiasts around the world."
+	},
+	{
+		"image": "https://ftp.goit.study/img/cars-test-task/pontiac_firebird.jpeg",
+		"text": "The Pontiac Firebird is a classic American muscle car known for its bold styling and powerful performance. From its iconic hood scoop to its roaring V8 engine, every detail of the Firebird exudes confidence and charisma."
+	},
+	{
+		"image": "https://imgs.search.brave.com/MUI0ZZ7-bS62waVnyX6zHH_Kdup81DBXU1t2OCAqi3Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/Y25ldC5jb20vYS9p/bWcvcmVzaXplLzcz/OTVlZWE1N2JjZWZj/MmNiZTQ2OGI2Njgy/OGQ2MDE4OGJmYTVi/OTYvaHViLzIwMTYv/MDMvMjgvYThkY2Ux/NjEtNTMwZi00M2Q2/LTk0ZWQtNzBlOWRj/ZGE4YzMyLzIwMTYt/dG95b3RhLXJhdjQt/c2UtMS5qcGc_YXV0/bz13ZWJwJndpZHRo/PTEyMDA",
+		"text": "The Toyota RAV4 is a versatile and reliable SUV that's perfect for everyday adventures. With its spacious interior, fuel-efficient engine, and advanced safety features, it's the ideal choice for drivers seeking comfort and convenience."
+	}
+]

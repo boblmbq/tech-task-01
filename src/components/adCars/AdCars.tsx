@@ -1,3 +1,4 @@
+import { CarImage, CarImageWrapper, Figure } from './AdCars.styled';
 import { AdCarsProps } from './AdCars.types';
 
 function AdCars({ data }: AdCarsProps) {
@@ -5,12 +6,12 @@ function AdCars({ data }: AdCarsProps) {
 		<>
 			{data.map(({ image, text }) => {
 				return (
-					<figure>
-						<div>
-							<img src={image} alt='car' />
-						</div>
-						<figcaption>{text}</figcaption>
-					</figure>
+					<Figure key={text}>
+						<CarImageWrapper>
+							<CarImage src={image} alt='car' />
+						</CarImageWrapper>
+						{/* <figcaption>{text}</figcaption> */}
+					</Figure>
 				);
 			})}
 		</>

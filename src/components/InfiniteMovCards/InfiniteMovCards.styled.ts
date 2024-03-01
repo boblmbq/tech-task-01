@@ -10,12 +10,16 @@ to {
 `;
 
 export const FooDiv = styled.div`
-display: flex;
+	display: flex;
 	overflow: hidden;
+	height: 250px;
+	&:hover div {
+		animation-play-state: paused;
+	}
 `;
 
 export const InfiniteMovCardsWrapper = styled.div`
-	width: max-content;
 	white-space: nowrap;
-	animation: 35s ${slide} infinite linear;
+	animation: 40s ${slide} infinite linear;
+	z-index: 1000;
 `;

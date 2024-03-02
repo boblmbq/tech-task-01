@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
+import { TextWrapper, Text } from './TextWriter.styled';
 
 function TextWriter() {
 	const element = useRef(null);
@@ -9,11 +10,11 @@ function TextWriter() {
 			strings: [
 				'Best Wheels to <strong>Rent</strong>',
 				'Best Wheels to <strong>Ride</strong>',
-				'Best Wheels to <strong>Entertainment</strong>',
+				'Best Wheels for <strong>Entertainment</strong>',
 			],
-			startDelay: 2500,
+			startDelay: 500,
 			typeSpeed: 60,
-			backSpeed: 60,
+			backSpeed: 45,
 			backDelay: 1300,
 			smartBackspace: true,
 		});
@@ -23,9 +24,11 @@ function TextWriter() {
 	}, []);
 
 	return (
-		<h1>
-			<span ref={element} />
-		</h1>
+		<TextWrapper>
+			<Text>
+				<span ref={element} />
+			</Text>
+		</TextWrapper>
 	);
 }
 

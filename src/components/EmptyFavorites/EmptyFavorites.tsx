@@ -5,7 +5,7 @@ function EmptyFavorites() {
 		<EmptyFavoritesWrapper>
 			<Text>Oops, You didn&#8217;t choose any favorite car yet...</Text>
 			<Text>
-				but you still can do it in <LinkTo to='/catalog'>Catalog</LinkTo>
+				but you still can do it in <LinkTo to='/shr/catalog'>Catalog</LinkTo>
 			</Text>
 		</EmptyFavoritesWrapper>
 	);

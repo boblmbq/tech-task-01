@@ -1,8 +1,5 @@
-import {
-  Navigate,
-  createBrowserRouter,
-} from "react-router-dom";
-import { lazy } from 'react';
+import { Suspense, lazy } from 'react';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 const SharedLayout = lazy(() => import('./components/SharedLayout'));
 const Home = lazy(() => import('./pages/Home'));
@@ -12,13 +9,18 @@ const Favorites = lazy(() => import('./pages/Favorites'));
 export const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <SharedLayout />,
+		element: <Home />,
+		errorElement: <Navigate to='/' />,
+	},
+	{
+		path: '/shr',
+		element: (
+			<Suspense fallback="loading">
+				<SharedLayout />
+			</Suspense>
+		),
 		errorElement: <Navigate to='/' />,
 		children: [
-			{
-				path: "/",
-				element: <Home />,
-			},
 			{
 				path: 'catalog',
 				element: <Catalog />,

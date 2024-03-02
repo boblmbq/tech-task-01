@@ -1,4 +1,4 @@
-import { Li, Ul } from './WhyUs.styled';
+import { Hading, Li, Ul } from './WhyUs.styled';
 
 function WhyUs() {
 	const whyUsText = [
@@ -8,7 +8,7 @@ function WhyUs() {
 	];
 	return (
 		<div>
-			<h2>WhyUs</h2>
+			<Hading>WhyUs</Hading>
 			<Ul>
 				{whyUsText.map((text, idx) => {
 					return <Li key={idx}>{text}</Li>;

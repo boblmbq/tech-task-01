@@ -6,6 +6,7 @@
 }
 
 body {
+	overflow-x: hidden;
 	margin: 0;
 	box-sizing: border-box;
 	font-family: var(--font-family), sans-serif;
@@ -17,6 +18,20 @@ body {
 code {
 	font-family: var(--font-family), Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	height: 100svh;
+}
+
+main {
+	flex-grow: 1;
+}
+
+footer {
+	flex-shrink: 0;
 }
 
 ul {
@@ -47,4 +62,9 @@ button {
 	cursor: pointer;
 	color: white;
 	border: none;
+}
+
+body::-webkit-scrollbar {
+	background-color: transparent;
+	width: 0em;
 }

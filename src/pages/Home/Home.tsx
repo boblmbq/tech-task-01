@@ -1,4 +1,6 @@
 import ChooseFirstCar from 'components/ChooseFirstCar';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 import InfiniteMovCards from 'components/InfiniteMovCards';
 import TextWriter from 'components/TextWriter/TextWriter';
 import WhyUs from 'components/WhyUs';
@@ -10,7 +12,6 @@ import {
 	MovingCardsSection,
 	WhyUsCentered,
 } from './HomeLayout/HomeSection.styled';
-import Footer from 'components/Footer';
 
 function Home() {
 	return (

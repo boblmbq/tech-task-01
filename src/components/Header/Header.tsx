@@ -1,22 +1,20 @@
-import { Link } from 'react-router-dom';
 import Container from 'components/Container';
+import { Link } from 'react-router-dom';
+import { LinkWrapper, Ul } from './Header.styled';
 
 function Header() {
 	return (
 		<header>
 			<Container>
 				<nav>
-					<ul>
-						<li>
-							<Link to='home'>home</Link>
-						</li>
-						<li>
-							<Link to='catalog'>catalog</Link>
-						</li>
-						<li>
-							<Link to='favorites'>favorites</Link>
-						</li>
-					</ul>
+					<Ul>
+						<LinkWrapper>
+							<Link to='/shr/catalog'>Catalog</Link>
+						</LinkWrapper>
+						<LinkWrapper>
+							<Link to='/shr/favorites'>Favorites</Link>
+						</LinkWrapper>
+					</Ul>
 				</nav>
 			</Container>
 		</header>

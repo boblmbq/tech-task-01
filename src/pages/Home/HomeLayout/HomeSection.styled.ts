@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const HEIGHT = 50
+const HEIGHT = 50;
 
 export const MovingCardsSection = styled.section`
 	display: flex;

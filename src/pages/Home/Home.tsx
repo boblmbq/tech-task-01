@@ -4,17 +4,17 @@ import TextWriter from 'components/TextWriter/TextWriter';
 import WhyUs from 'components/WhyUs';
 import AdCars from 'components/adCars';
 import adCarInfo from 'information/homePageAdCars.json';
-import { Suspense } from 'react';
 import HomeSection from './HomeLayout/HomeSection';
 import {
 	CenteredFSWrapper,
 	MovingCardsSection,
 	WhyUsCentered,
 } from './HomeLayout/HomeSection.styled';
+import Footer from 'components/Footer';
 
 function Home() {
 	return (
-		<Suspense fallback="loading">
+		<>
 			<main>
 				<HomeSection children={<TextWriter />} />
 
@@ -40,7 +40,8 @@ function Home() {
 					}
 				/>
 			</main>
-		</Suspense>
+			<Footer />
+		</>
 	);
 }
 export default Home;

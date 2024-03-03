@@ -3,18 +3,17 @@ import { AdCarsProps } from './AdCars.types';
 
 function AdCars({ data }: AdCarsProps) {
 	return (
-		<>
+		<div>
 			{data.map(({ image, text }) => {
 				return (
 					<Figure key={text}>
 						<CarImageWrapper>
 							<CarImage src={image} alt='car' />
 						</CarImageWrapper>
-						{/* <figcaption>{text}</figcaption> */}
 					</Figure>
 				);
 			})}
-		</>
+		</div>
 	);
 }
 

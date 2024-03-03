@@ -2,10 +2,10 @@ import styled, { keyframes } from 'styled-components';
 
 const slide = keyframes`
 from {
-	transform: translateX(0)
+	transform: translateX(-100%)
 }
 to {
-	transform: translateX(-100%)
+	transform: translateX(0)
 }
 `;
 
@@ -20,6 +20,5 @@ export const FooDiv = styled.div`
 
 export const InfiniteMovCardsWrapper = styled.div`
 	white-space: nowrap;
-	animation: 40s ${slide} infinite linear;
-	z-index: 1000;
+	animation: 120s ${slide} infinite linear;
 `;

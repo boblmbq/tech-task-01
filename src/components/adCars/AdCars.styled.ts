@@ -9,7 +9,6 @@ export const Figure = styled.figure`
 	height: 250px;
 	border-radius: 14px;
 	overflow: hidden;
-	// background: rgba(52, 112, 255, 0.74);
 `;
 export const CarImageWrapper = styled.div`
 	width: 100%;

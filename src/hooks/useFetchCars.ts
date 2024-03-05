@@ -23,6 +23,7 @@ export default function useFetchCars() {
 	const [page, setPage] = useState(1);
 
 	const cars = onFilter ? filteredCars : paginatedCars;
+	const showLoadMoreBtn = !onFilter && cars.length / LIMIT >= page;
 
 	const handleIncrementPage = () => {
 		setPage(prev => prev + 1);
@@ -41,5 +42,12 @@ export default function useFetchCars() {
 		dispatch(fetchPaginatedCars(params));
 	}, [page, dispatch]);
 
-	return { cars, page, handleIncrementPage, loading, error };
+	return {
+		cars,
+		page,
+		handleIncrementPage,
+		showLoadMoreBtn,
+		loading,
+		error,
+	};
 }

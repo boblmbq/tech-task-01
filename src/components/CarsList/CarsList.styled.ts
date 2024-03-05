@@ -4,6 +4,7 @@ export const CarsListWrapper = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
 	gap: 50px 29px;
+	margin-top: 50px;
 `;
 
 export const DetailedInfoListsWrapper = styled.div`
@@ -27,13 +28,13 @@ export const DetailedInfoTextWrapper = styled.li`
 	color: rgba(18, 20, 23, 0.5);
 	white-space: nowrap;
 	padding-right: 6px;
-	
 
 	&:not(:last-child) {
 		border-right: 1px solid rgba(18, 20, 23, 0.1);
 	}
 
-	&:first-child, &:last-child{
+	&:first-child,
+	&:last-child {
 		padding-left: 0;
 	}
 `;

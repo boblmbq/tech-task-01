@@ -1,7 +1,7 @@
 import CarItem from 'components/CarItem/CarItem';
 import uuid from 'react-uuid';
-import { CarsListWrapper } from './CarsList.styled';
 import { CarListProps } from './CarListProps.types';
+import { CarsListWrapper } from './CarsList.styled';
 
 function CarsList({ data }: CarListProps) {
 	return (

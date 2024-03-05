@@ -6,19 +6,25 @@ import useFetchCars from 'hooks/useFetchCars';
 import { CatalogWrapper } from './Catalog.styled';
 
 function Catalog() {
-	const { cars, page, handleIncrementPage, loading, error } = useFetchCars();
+	const {
+		cars,
+		handleIncrementPage,
+		showLoadMoreBtn,
+		loading,
+		error,
+	} = useFetchCars();
 
-	const showLoadMoreBtn = cars.length / LIMIT >= page;
+	// const showLoadMoreBtn = cars.length / LIMIT >= page;
 
 	return (
 		cars && (
-			<CatalogWrapper>
+			<div>
 				<CarFilter />
 				<CarsList data={cars} />
 				{showLoadMoreBtn && (
 					<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
 				)}
-			</CatalogWrapper>
+			</div>
 		)
 	);
 }

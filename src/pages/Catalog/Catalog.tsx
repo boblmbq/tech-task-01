@@ -1,29 +1,34 @@
-import { LIMIT } from 'api/params';
 import CarFilter from 'components/CarFilter/CarFilter';
 import CarsList from 'components/CarsList/CarsList';
 import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 import useFetchCars from 'hooks/useFetchCars';
-import { CatalogWrapper } from './Catalog.styled';
+import { useEffect } from 'react';
+import { LoadMoreWrapper } from './Catalog.styled';
 
 function Catalog() {
-	const {
-		cars,
-		handleIncrementPage,
-		showLoadMoreBtn,
-		loading,
-		error,
-	} = useFetchCars();
+	const { cars, handleIncrementPage, showLoadMoreBtn, loading, error } =
+		useFetchCars();
 
-	// const showLoadMoreBtn = cars.length / LIMIT >= page;
+	useEffect(() => {
+		if (cars.length > 12) {
+			const height = 426;
+			window.scrollBy({
+				top: height * 1.3,
+				behavior: 'smooth',
+			});
+		}
+	}, [cars.length]);
 
 	return (
 		cars && (
 			<div>
 				<CarFilter />
 				<CarsList data={cars} />
-				{showLoadMoreBtn && (
-					<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
-				)}
+				<LoadMoreWrapper>
+					{showLoadMoreBtn && (
+						<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
+					)}
+				</LoadMoreWrapper>
 			</div>
 		)
 	);

@@ -7,6 +7,7 @@ const handlePending = (state: carInitialState) => {
 };
 
 const handleRejected = (state: carInitialState) => {
+	state.loading = false;
 	state.error = 'Something went wrong';
 };
 
@@ -33,12 +34,14 @@ const carSlice = createSlice({
 				fetchAllCars.fulfilled,
 				(state, action: PayloadAction<RentalCars>) => {
 					state.allCars = action.payload;
+					state.loading = false;
 				}
 			)
 			.addCase(
 				fetchPaginatedCars.fulfilled,
 				(state, action: PayloadAction<RentalCars>) => {
 					state.cars.push(...action.payload);
+					state.loading = false;
 				}
 			)
 			.addMatcher(action => action.type.endsWith('/pending'), handlePending)

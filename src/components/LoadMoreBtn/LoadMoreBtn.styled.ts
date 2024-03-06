@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonWrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	padding: 50px 0;
-	margin-top: 50px;
-`;
+
 
 export const Button = styled.button`
 	font-family: var(--font-family);

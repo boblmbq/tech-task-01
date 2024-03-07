@@ -19,15 +19,20 @@ function Catalog() {
 		}
 	}, [cars.length]);
 
+	if (error) {
+		return <div>something went wrong</div>;
+	}
 	return (
 		cars && (
 			<div>
 				<CarFilter />
 				<CarsList data={cars} />
 				<LoadMoreWrapper>
-					{showLoadMoreBtn && (
-						<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
-					)}
+					{loading
+						? 'loading'
+						: showLoadMoreBtn && (
+								<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
+						  )}
 				</LoadMoreWrapper>
 			</div>
 		)

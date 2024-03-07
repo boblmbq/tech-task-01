@@ -9,13 +9,17 @@ const Favorites = lazy(() => import('./pages/Favorites'));
 export const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Home />,
+		element: (
+			<Suspense fallback='loading'>
+				<Home />
+			</Suspense>
+		),
 		errorElement: <Navigate to='/' />,
 	},
 	{
 		path: '/shr',
 		element: (
-			<Suspense fallback="loading">
+			<Suspense fallback='loading'>
 				<SharedLayout />
 			</Suspense>
 		),

@@ -1,25 +1,23 @@
 {
   "files": {
     "main.css": "/urban-wheels/static/css/main.5d84b15c.css",
-    "main.js": "/urban-wheels/static/js/main.c157689f.js",
-    "static/js/576.02292ed6.chunk.js": "/urban-wheels/static/js/576.02292ed6.chunk.js",
-    "static/js/272.5f8200a6.chunk.js": "/urban-wheels/static/js/272.5f8200a6.chunk.js",
-    "static/js/656.e4536b4b.chunk.js": "/urban-wheels/static/js/656.e4536b4b.chunk.js",
-    "static/js/426.da810392.chunk.js": "/urban-wheels/static/js/426.da810392.chunk.js",
-    "static/js/808.a67c11a3.chunk.js": "/urban-wheels/static/js/808.a67c11a3.chunk.js",
+    "main.js": "/urban-wheels/static/js/main.8c1cb2fe.js",
+    "static/js/576.56fe7738.chunk.js": "/urban-wheels/static/js/576.56fe7738.chunk.js",
+    "static/js/272.db30d100.chunk.js": "/urban-wheels/static/js/272.db30d100.chunk.js",
+    "static/js/656.78b0a19c.chunk.js": "/urban-wheels/static/js/656.78b0a19c.chunk.js",
+    "static/js/184.dd542e7c.chunk.js": "/urban-wheels/static/js/184.dd542e7c.chunk.js",
     "static/js/644.228175c7.chunk.js": "/urban-wheels/static/js/644.228175c7.chunk.js",
     "index.html": "/urban-wheels/index.html",
     "main.5d84b15c.css.map": "/urban-wheels/static/css/main.5d84b15c.css.map",
-    "main.c157689f.js.map": "/urban-wheels/static/js/main.c157689f.js.map",
-    "576.02292ed6.chunk.js.map": "/urban-wheels/static/js/576.02292ed6.chunk.js.map",
-    "272.5f8200a6.chunk.js.map": "/urban-wheels/static/js/272.5f8200a6.chunk.js.map",
-    "656.e4536b4b.chunk.js.map": "/urban-wheels/static/js/656.e4536b4b.chunk.js.map",
-    "426.da810392.chunk.js.map": "/urban-wheels/static/js/426.da810392.chunk.js.map",
-    "808.a67c11a3.chunk.js.map": "/urban-wheels/static/js/808.a67c11a3.chunk.js.map",
+    "main.8c1cb2fe.js.map": "/urban-wheels/static/js/main.8c1cb2fe.js.map",
+    "576.56fe7738.chunk.js.map": "/urban-wheels/static/js/576.56fe7738.chunk.js.map",
+    "272.db30d100.chunk.js.map": "/urban-wheels/static/js/272.db30d100.chunk.js.map",
+    "656.78b0a19c.chunk.js.map": "/urban-wheels/static/js/656.78b0a19c.chunk.js.map",
+    "184.dd542e7c.chunk.js.map": "/urban-wheels/static/js/184.dd542e7c.chunk.js.map",
     "644.228175c7.chunk.js.map": "/urban-wheels/static/js/644.228175c7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5d84b15c.css",
-    "static/js/main.c157689f.js"
+    "static/js/main.8c1cb2fe.js"
   ]
 }

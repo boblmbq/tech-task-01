@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/urban-wheels/static/css/main.5d84b15c.css",
-    "main.js": "/urban-wheels/static/js/main.8c1cb2fe.js",
+    "main.js": "/urban-wheels/static/js/main.4760a374.js",
     "static/js/576.56fe7738.chunk.js": "/urban-wheels/static/js/576.56fe7738.chunk.js",
     "static/js/272.db30d100.chunk.js": "/urban-wheels/static/js/272.db30d100.chunk.js",
     "static/js/656.78b0a19c.chunk.js": "/urban-wheels/static/js/656.78b0a19c.chunk.js",
@@ -9,7 +9,7 @@
     "static/js/644.228175c7.chunk.js": "/urban-wheels/static/js/644.228175c7.chunk.js",
     "index.html": "/urban-wheels/index.html",
     "main.5d84b15c.css.map": "/urban-wheels/static/css/main.5d84b15c.css.map",
-    "main.8c1cb2fe.js.map": "/urban-wheels/static/js/main.8c1cb2fe.js.map",
+    "main.4760a374.js.map": "/urban-wheels/static/js/main.4760a374.js.map",
     "576.56fe7738.chunk.js.map": "/urban-wheels/static/js/576.56fe7738.chunk.js.map",
     "272.db30d100.chunk.js.map": "/urban-wheels/static/js/272.db30d100.chunk.js.map",
     "656.78b0a19c.chunk.js.map": "/urban-wheels/static/js/656.78b0a19c.chunk.js.map",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.5d84b15c.css",
-    "static/js/main.8c1cb2fe.js"
+    "static/js/main.4760a374.js"
   ]
 }

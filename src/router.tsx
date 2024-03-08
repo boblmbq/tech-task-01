@@ -1,3 +1,4 @@
+import LoadingPage from 'pages/LoadingPage/Loading';
 import { Suspense, lazy } from 'react';
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 
@@ -10,7 +11,7 @@ export const router = createBrowserRouter([
 	{
 		path: '/',
 		element: (
-			<Suspense fallback='loading'>
+			<Suspense fallback={<LoadingPage />}>
 				<Home />
 			</Suspense>
 		),
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
 	{
 		path: '/shr',
 		element: (
-			<Suspense fallback='loading'>
+			<Suspense fallback={<LoadingPage />}>
 				<SharedLayout />
 			</Suspense>
 		),

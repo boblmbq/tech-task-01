@@ -3,6 +3,7 @@ import CarsList from 'components/CarsList/CarsList';
 import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 import useFetchCars from 'hooks/useFetchCars';
 import { useEffect } from 'react';
+import { ThreeDots } from 'react-loader-spinner';
 import { LoadMoreWrapper } from './Catalog.styled';
 
 function Catalog() {
@@ -28,11 +29,21 @@ function Catalog() {
 				<CarFilter />
 				<CarsList data={cars} />
 				<LoadMoreWrapper>
-					{loading
-						? 'loading'
-						: showLoadMoreBtn && (
-								<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
-						  )}
+					{loading ? (
+						<ThreeDots
+							visible={true}
+							height='60'
+							width='60'
+							color='#3470ff'
+							radius='9'
+							ariaLabel='three-dots-loading'
+							wrapperStyle={{ alignItems: 'center' }}
+						/>
+					) : (
+						showLoadMoreBtn && (
+							<LoadMoreBtn handleIncrementPage={handleIncrementPage} />
+						)
+					)}
 				</LoadMoreWrapper>
 			</div>
 		)
